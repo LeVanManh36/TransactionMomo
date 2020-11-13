@@ -29,12 +29,6 @@
                     </a>
                 </li>
 
-                <li ng-if="['admin', 'maker', 'checker', 'owner'].indexOf(authUser.role) > -1">
-                    <a ui-sref="home.labels" ui-sref-opts="{reload: true}">
-                        <i class="fa fa-tags"></i>{{ 'Sidebar.labels' | translate }}
-                    </a>
-                </li>
-
                 <li ng-if="authUser.role == 'admin'">
                     <a ui-sref="home.areas" ui-sref-opts="{reload: true}">
                         <i class="fa fa-map-marker"></i>{{ 'Sidebar.areas' | translate }}
@@ -95,12 +89,6 @@
                 <li ng-if="isRoleAdmin">
                     <a ui-sref="home.users_disabled" ui-sref-opts="{reload: true}">
                         <i class="fas fa-address-card"></i>{{ 'Sidebar.accounts_disabled' | translate }}
-                    </a>
-                </li>
-
-                <li ng-if="['admin', 'maker', 'checker', 'owner'].indexOf(authUser.role) > -1">
-                    <a ui-sref="home.labels" ui-sref-opts="{reload: true}">
-                        <i class="fa fa-tags"></i>{{ 'Sidebar.labels' | translate }}
                     </a>
                 </li>
 

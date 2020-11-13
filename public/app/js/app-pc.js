@@ -11,7 +11,6 @@ angular.module('piServerApp', [
     'piConfig',
     'piIndex.controllers',
     'piAuth.service',
-    'piSettings.controllers',
     'piAuth.controllers',
     'piProfile.controllers',
     'piAccounts.controllers',
@@ -66,16 +65,16 @@ angular.module('piServerApp', [
         css: 'css/login.css',
       })
 
-      .state("home.settings", {
-        url: "settings",
-        views: {
-          "main": {
-            templateUrl: '/app/views/Setting/index.html',
-            controller: 'SettingsCtrl'
-          }
-        },
-        permissions: permissions.admin
-      })
+      // .state("home.settings", {
+      //   url: "settings",
+      //   views: {
+      //     "main": {
+      //       templateUrl: '/app/views/Setting/index.html',
+      //       controller: 'SettingsCtrl'
+      //     }
+      //   },
+      //   permissions: permissions.admin
+      // })
 
       .state("home.changePw", {
         url: "changePw",

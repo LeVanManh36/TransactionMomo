@@ -166,15 +166,6 @@ angular.module('piAccounts.controllers', [])
   .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, piNgTable) {
 
     $scope.companies = [];
-    dataLoader.getCompanies({pageSize: 50})
-      .then(data => {
-        $scope.companies = data.list_data.map(({_id, name, ...others}) => {
-          return {_id, name}
-        })
-      })
-      .catch(err => {
-        console.log('dataLoader.getCompanies error:', err)
-      });
 
     $scope.roles = [];
     $scope.roleOptions = {};
