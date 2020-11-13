@@ -15,9 +15,7 @@ angular.module('piServerApp', [
     'piAuth.controllers',
     'piProfile.controllers',
     'piAccounts.controllers',
-    'piCompanies.controllers',
     'piLocations.controllers',
-    'piLabels.controllers',
     'pisignage.filters',
     'pisignage.directives',
     'pisignage.services',
@@ -122,17 +120,6 @@ angular.module('piServerApp', [
         permissions: permissions.admin
       })
 
-      .state("home.companies", {
-        url: "companies",
-        views: {
-          "main": {
-            templateUrl: 'app/views/Company/index.html',
-            controller: 'CompanyCtrl'
-          }
-        },
-        permissions: permissions.admin
-      })
-
       .state("home.areas", {
         url: "areas",
         views: {
@@ -142,28 +129,6 @@ angular.module('piServerApp', [
           }
         },
         permissions: permissions.admin
-      })
-
-      .state("home.oohs", {
-        url: "oohs",
-        views: {
-          "main": {
-            templateUrl: 'app/views/OOH/index.html',
-            controller: 'OOHCtrl'
-          }
-        },
-        permissions: permissions.admin
-      })
-
-      .state("home.labels", {
-        url: "labels",
-        views: {
-          "main": {
-            templateUrl: 'app/views/Label/index.html',
-            controller: 'LabelCtrl'
-          }
-        },
-        permissions: permissions.basic
       })
 
       // .state("login", {

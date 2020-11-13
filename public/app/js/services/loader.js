@@ -60,14 +60,6 @@ angular.module('pisignage.services')
         return this.fetchApi({method: 'DELETE', url, params}, cb)
       },
 
-      getCompanies(params = null, cb = null) {
-        return this.fetchData(piUrls.companies, params, cb)
-      },
-
-      getLabels(params = null, cb) {
-        return this.fetchData(piUrls.labels, params, cb)
-      },
-
       getUsers(params = null) {
         return this.fetchData(piUrls.users, params)
       },
@@ -86,14 +78,6 @@ angular.module('pisignage.services')
       
       getAreas(params = null) {
         return this.fetchData(piUrls.areas, params)
-      },
-
-      getOohs(params = null) {
-        return this.fetchData(piUrls.oohs, params)
-      },
-
-      scanWifi(pid, params = null) {
-        return this.fetchData(`${piUrls.piWifi}/${pid}`, params)
-      },
+      }
     }
   });

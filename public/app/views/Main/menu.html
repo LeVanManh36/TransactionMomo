@@ -29,12 +29,6 @@
                     </a>
                 </li>
 
-                <li ng-if="isRoleAdmin">
-                    <a ui-sref="home.companies" ui-sref-opts="{reload: true}">
-                        <i class="fas fa-building"></i>{{ 'Sidebar.companies' | translate }}
-                    </a>
-                </li>
-
                 <li ng-if="['admin', 'maker', 'checker', 'owner'].indexOf(authUser.role) > -1">
                     <a ui-sref="home.labels" ui-sref-opts="{reload: true}">
                         <i class="fa fa-tags"></i>{{ 'Sidebar.labels' | translate }}
@@ -44,12 +38,6 @@
                 <li ng-if="authUser.role == 'admin'">
                     <a ui-sref="home.areas" ui-sref-opts="{reload: true}">
                         <i class="fa fa-map-marker"></i>{{ 'Sidebar.areas' | translate }}
-                    </a>
-                </li>
-
-                <li ng-if="authUser.role == 'admin'">
-                    <a ui-sref="home.oohs" ui-sref-opts="{reload: true}">
-                        <i class="fa fa-map"></i>{{ 'Sidebar.oohs' | translate }}
                     </a>
                 </li>
 
@@ -110,12 +98,6 @@
                     </a>
                 </li>
 
-                <li ng-if="isRoleAdmin">
-                    <a ui-sref="home.companies" ui-sref-opts="{reload: true}">
-                        <i class="fas fa-building"></i>{{ 'Sidebar.companies' | translate }}
-                    </a>
-                </li>
-
                 <li ng-if="['admin', 'maker', 'checker', 'owner'].indexOf(authUser.role) > -1">
                     <a ui-sref="home.labels" ui-sref-opts="{reload: true}">
                         <i class="fa fa-tags"></i>{{ 'Sidebar.labels' | translate }}
@@ -125,12 +107,6 @@
                 <li ng-if="['admin'].indexOf(authUser.role) > -1">
                     <a ui-sref="home.areas" ui-sref-opts="{reload: true}">
                         <i class="fa fa-map-marker"></i>{{ 'Sidebar.areas' | translate }}
-                    </a>
-                </li>
-
-                <li ng-if="authUser.role == 'admin'">
-                    <a ui-sref="home.oohs" ui-sref-opts="{reload: true}">
-                        <i class="fa fa-map"></i>{{ 'Sidebar.oohs' | translate }}
                     </a>
                 </li>
 
@@ -351,55 +327,3 @@
 
   })(jQuery);
 </script>
-
-<!--<script type="text/ng-template" id="custom/pager">-->
-<!--    <ul class="pager ng-cloak">-->
-<!--        <li ng-repeat="page in pages"-->
-<!--            ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"-->
-<!--            ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">-->
-<!--            <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>-->
-<!--            <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <div class="btn-group">-->
-<!--                <button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)" class="btn btn-default">10</button>-->
-<!--                <button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)" class="btn btn-default">25</button>-->
-<!--                <button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)" class="btn btn-default">50</button>-->
-<!--                <button type="button" ng-class="{'active':params.count() == 100}" ng-click="params.count(100)" class="btn btn-default">1000</button>-->
-<!--            </div>-->
-<!--        </li>-->
-<!--    </ul>-->
-<!--</script>-->
-
-<!--<script type="text/ng-template" id="custom/pager">-->
-<!--    <div class="bottom">-->
-<!--        <div ng-if="params.settings().counts.length" id="allocateCargoTable_length" class="dataTables_length">-->
-<!--            <label>Show-->
-<!--                <select ng-param-directive ng-model="pageCount" ng-options="count for count in params.settings().counts"-->
-<!--                        ng-change="pageCounter(pageCount)">-->
-<!--                </select>-->
-<!--                Rows-->
-<!--            </label>-->
-<!--            <div class="dataTables_paginate paging_bs_normal">-->
-<!--                <ul class="pagination ng-table-pagination pull-right">-->
-<!--                    <li ng-class="{'disabled': !page.active}" ng-repeat="page in pages" ng-switch="page.type">-->
-
-
-<!--                        <a ng-switch-when="prev" ng-click="params.page(page.number)" href=""><span-->
-<!--                                class="glyphicon glyphicon-chevron-left"></span>&nbsp;Previous</a>-->
-<!--                        <a ng-switch-when="first" ng-click="params.page(page.number)" href=""><span-->
-<!--                                ng-bind="page.number"></span></a>-->
-<!--                        <a ng-switch-when="page" ng-click="params.page(page.number)" href=""><span-->
-<!--                                ng-bind="page.number"></span></a>-->
-<!--                        <a ng-switch-when="more" ng-click="params.page(page.number)" href="">&#8230;</a>-->
-<!--                        <a ng-switch-when="last" ng-click="params.page(page.number)" href=""><span-->
-<!--                                ng-bind="page.number"></span></a>-->
-<!--                        <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next&nbsp;<span-->
-<!--                                class="glyphicon glyphicon-chevron-right"></span></a>-->
-
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</script>-->

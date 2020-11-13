@@ -37,11 +37,6 @@ const FIELDS = {
     type: String,
     index: true
   },
-  company: {
-    type: Schema.ObjectId,
-    ref: 'Company',
-    index: true
-  },
   hash: {
     type: String,
     required: true
@@ -69,17 +64,13 @@ const FIELDS = {
   }
 }
 
-const allowField = ['_id', 'email', 'name', 'role', 'phone', 'company', 'insert', 'update'];
+const allowField = ['_id', 'email', 'name', 'role', 'phone', 'insert', 'update'];
 const methods = {
   getFields: function (fields = allowField) {
     return Utils.fillOptionalFields(this, {}, fields);
   }
 };
 
-const arrayJoin = [
-  {path: 'company', select: 'name address email phone storageConfig enableLog enableTracking'},
-];
-
-let tableSchema = BaseSchema(FIELDS, projection, methods, arrayJoin);
+let tableSchema = BaseSchema(FIELDS, projection, methods);
 
 module.exports = mongoose.model(mTAG, tableSchema);

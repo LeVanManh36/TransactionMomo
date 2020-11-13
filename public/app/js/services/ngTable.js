@@ -6,8 +6,8 @@ angular.module('pisignage.services')
     return {
 
       arrFieldDate: ['insert.when', 'delete.when', 'registration.date', 'registration.expired'],
-      arrFieldBoolean: ['isConnected'],
-      arrFieldIncludes: ['labels'],
+      arrFieldBoolean: [],
+      arrFieldIncludes: [],
       arrFieldStatus: ['status'],
 
       setConditions(params) {

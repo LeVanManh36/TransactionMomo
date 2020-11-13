@@ -8,17 +8,14 @@ const {uploadDir, uploadHost, assetDir, downloadDir, mediaDir, installation} = r
 const licenseDir = `${dataDir}/licenses`;
 
 const {FORMAT_DATE = 'YYYY-MM-DD'} = process.env;
-const {AUTH_TYPE} = require('./gRpc');
 const {baseUrl, backendHost, backendPort} = require('./http');
 const DB_CONFIG = require('./database');
-const fileConfig = require('./file');
 const downloadUrl = `${baseUrl}/downloads`;
 // const pdfMakeFonts = require('../libs/pdfmake/fonts.json');
-const {EXCEL_LINE_LIMIT, FILE_GROUP_MULTI} = process.env;
+const {EXCEL_LINE_LIMIT} = process.env;
 const settings = require('./setting');
 
 module.exports = {
-  AUTH_TYPE: AUTH_TYPE,
   baseUrl: baseUrl,
   backendHost: backendHost,
   backendPort: backendPort,
@@ -42,7 +39,6 @@ module.exports = {
     secret: 'manhlv2512@gmail.com'
   },
   ...settings,
-  ...fileConfig,
   // pdfMakeFonts: pdfMakeFonts,
   conversionValue: 1000,
   EXCEL_LINE_LIMIT: EXCEL_LINE_LIMIT || 20000

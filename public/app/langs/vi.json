@@ -11,10 +11,6 @@
     "save": "Lưu",
     "delete": "Xóa",
     "detail": "Chi tiết",
-    "deleteDevice": "Xóa thiết bị",
-    "saveAddress": "Lưu địa chỉ",
-    "savePrice": "Lưu giá tiền",
-    "saveDiscount": "Lưu chiết khấu",
     "view": "Xem",
     "back": "Quay lại",
     "close": "Đóng",
@@ -33,77 +29,31 @@
     "upload": "Tải lên",
     "googleMap": "Google Map",
     "make": "Tạo",
-    "deploy": "Triển khai",
-    "deployAll": "Triển khai tất cả",
-    "unDeploy": "Ngừng triển khai",
-    "unDeployAll": "Ngừng triển khai tất cả",
-    "approve": "Phê duyệt",
-    "approveAll": "Phê duyệt tất cả",
-    "disapprove": "Không phê duyệt",
-    "disapproveAll": "Không phê duyệt tất cả",
     "execute": "Thực hiện",
     "record": "Ghi âm",
     "stop": "Kết thúc",
-    "schedule": "Đặt lịch",
     "setting": "Thiết lập",
-    "sigusr2": "SIGUSR2",
     "restoreDefault": "Khôi phục mặc định",
     "saveChange": "Lưu thay đổi",
-    "assignContent": "Gán nội dung",
-    "restoreSideArea": "Khôi phục mặc định vùng bên",
-    "restoreUnderArea": "Khôi phục mặc định vùng dưới cùng",
-    "assignGroupDefault": "Tự động gán nhóm mặc định ",
-    "takeSnapshot": "Take Snapshot",
     "continue": "Tiếp tục",
     "skip": "Bỏ qua",
     "select": "Chọn",
-    "assignLabel": "Gán nhãn",
     "language": "Ngôn ngữ",
     "exports": {
       "excel": "Xuất Excel",
       "html": "Xuất Html",
-      "pdf": "Xuất PDF",
-      "history": "Xuất lịch sử phát",
-      "schedule": "Xuất lịch phát sóng",
-      "device": "Xuất danh sách thiết bị",
-      "powerLog": "Xuất lịch sử bật/tắt thiết bị"
+      "pdf": "Xuất PDF"
     },
     "_upload": {
-      "fw": "Upload Firmware",
-      "file": "Tải lên tệp tin",
-      "playlist": "Tải lên danh sách phát",
-      "subscriptions": "Cập nhật danh sách thuê bao"
+      "file": "Tải lên tệp tin"
     },
     "add": {
       "account": "Thêm mới tài khoản",
-      "area": "Thêm mới khu vực",
-      "asset": "Thêm mới nội dung",
-      "company": "Thêm mới khách hàng",
-      "customer": "Thêm mới khách hàng",
-      "tag": "Thêm mới nhãn",
-      "ooh": "Thêm mới vị trí OOH",
-      "audio": "Thêm tệp âm thanh",
-      "link": "Thêm một liên kết",
-      "message": "Thêm một tin nhắn",
-      "validityTime": "Thêm thời gian hiệu lực",
-      "scheduleAdditionalPlaylist": "Thêm danh sách phát bổ sung"
-    },
-    "groups": {
-      "emergency": "Tin nhắn khẩn cấp",
-      "ticker": "Thông báo nhóm",
-      "setting": "Cài đặt nhóm"
-    },
-    "streaming": {
-      "audio": "Stream audio",
-      "video": "Stream video",
-      "stop": "Stream stop"
+      "area": "Thêm mới khu vực"
     }
   },
   "Checkbox": {
-    "enableLog": "Bật lịch sử phát sóng",
-    "enableTracking": "Bật theo dõi thiết bị",
     "display": "Hiển thị",
-    "displayIndependently": "Hiển thị độc lập",
     "enable": "Bật",
     "disable": "Tắt",
     "positions": {
@@ -116,45 +66,6 @@
       "scrollLeft": "Di chuyển sang trái",
       "scrollRight": "Di chuyển sang phải"
     },
-    "tickerSpeed": {
-      "text": "Tốc độ Ticker",
-      "slow": "Chậm",
-      "medium": "Trung bình",
-      "fast": "Nhanh",
-      "full": "Full"
-    },
-    "typeGroupTicker": {
-      "text": "Sử dụng văn bản",
-      "rssFeed": "Sử dụng RSS feed",
-      "useRssDesc": "Sử dụng trường mô tả của luồng rss thay vì trường tiêu đề",
-      "useRssEncoding": "Sử dụng mã hóa nhị phân cho RSS, kích hoạt tính năng này nếu các ký tự không được hiển thị đúng",
-      "itemDuration": "Item duration",
-      "RSSlink": "RSS feed Link",
-      "addMessageTicker": "Thêm tin nhắn văn bản cho ticker"
-    },
-    "settingGroupTicker": {
-      "label": "Cài đặt ticker cho nhóm phát",
-      "ticker": "Ticker",
-      "show": "Hiển thị",
-      "type": "Loại",
-      "slide": "Trượt",
-      "scrollLeft": "Trượt sang trái",
-      "scrollRight": "Trượt sang trái",
-      "openVG": "OpenVG",
-      "optionalCSS": "Tùy chọn CSS",
-      "linkRss": "Liên kết nguồn cấp dữ liệu RSS"
-    },
-    "resolutions": {
-      "720p": "HD(720p) 1280x720",
-      "1080p": "Full HD(1080p) 1920x1080",
-      "PAL": "PAL (RCA), 720x576",
-      "NTSC": "NTSC (RCA), 720x480"
-    },
-    "orientations": {
-      "landscape": "Chế độ Landscape",
-      "portraitLeft": "Chế độ Portrait Left (Phần cứng)",
-      "portraitRight": "Chế độ Portrait Right (Phần cứng)"
-    },
     "animations": {
       "blend": "Trộn",
       "slideUp": "Trượt lên",
@@ -162,49 +73,14 @@
       "slideLeft": "Trượt trái",
       "slideRight": "Trượt phải"
     },
-    "urlReload": {
-      "reload": "Reload link URLs each time",
-      "fixed": "Keep webpages in memory"
-    },
-    "fitImageVideo": {
-      "actual": "Actual",
-      "letterBox": "Letter Box",
-      "stretched": "Stretched"
-    },
-    "settingPowerTime": {
-      "on": "Bật lúc",
-      "off": "Tắt lúc"
-    },
-    "deployOptions": {
-      "combineDefaultPlaylist": "Phát danh sách phát mặc định cùng với (các) danh sách phát được lên lịch",
-      "loadPlaylistOnCompletion": "Thay đổi nhóm nội dung mới sau khi kết thúc danh sách phát hiện tại",
-      "playAllEligiblePlaylists": "Kết hợp nội dung của tất cả danh sách phát theo lịch",
-      "playScheduledPlaylist": "Phát theo lịch cố định"
-    },
     "checkAll": "Check All",
     "uncheckAll": "Uncheck All"
   },
   "Sidebar": {
     "accounts": "QL Tài Khoản",
     "accounts_disabled": "QL Tài Khoản Bị Xóa",
-    "companies": "QL Khách Hàng",
     "customers": "QL Khách Hàng",
     "areas": "QL Khu Vực",
-    "oohs": "QL Vị Trí OOH",
-    "players": "QL Thiết Bị",
-    "groups": "QL Nhóm Phát",
-    "assets": "QL Nội Dung",
-    "playlist": "Danh Sách Phát",
-    "labels": "Quản Lý Nhãn",
-    "confirms": "Phê Duyệt Nội Dung",
-    "devices": {
-      "online": "DS Thiết Bị Online",
-      "tracking": "Theo Dõi Thiết Bị",
-      "streaming": "Live Stream"
-    },
-    "histories": "Lịch Sử Phát Sóng",
-    "firmwares": "Quản Lý Firmware",
-    "subscription": "Quản Lý Thuê Bao",
     "settings": "Thiết Lập"
   },
   "Toolbar": {
@@ -224,18 +100,10 @@
     "minutes": "minute",
     "seconds": "second",
     "times": "lần",
-    "aMonth": "1 tháng",
     "version": "version",
-    "lastSeen": "Nhìn thấy lần cuối",
-    "lastSync": "Đồng bộ lần cuối",
-    "afterMinute": "after every",
-    "playAfter": "Play after every",
     "volume": "Volume",
-    "image": "image",
-    "image&title": "image&title",
-    "image&description": "image&description",
-    "tittle": "tittle",
-    "descr": "descr",
+    "tittle": "Tiêu đề",
+    "description": "Mô tả",
     "duration": "Thời lượng",
     "message": "Tin nhắn",
     "zoomLevel": "Mức độ phóng to",
@@ -264,10 +132,6 @@
       "ja": "Japanese",
       "vi": "Vietnamese"
     },
-    "status": {
-      "upload": "Trạng thái tải lên",
-      "deploying": "đang được triển khai"
-    },
     "enable": "Enable",
     "left": "Left",
     "right": "Right",
@@ -284,10 +148,6 @@
     "background": "Màn hình nền",
     "12hours": "12 hr",
     "24hours": "24 hr",
-    "deploy": "Triển khai",
-    "emptyContent": "nội dung trống",
-    "advt": "advt",
-    "dominate": "chi phối",
     "event": "sự kiện",
     "sound": "âm thanh",
     "checked": "checked",
@@ -317,78 +177,11 @@
       "edit": "Sửa thông tin khu vực",
       "delete": "Xóa khu vực"
     },
-    "companies": {
-      "list": "Danh sách khách hàng",
-      "create": "Thêm mới khách hàng",
-      "edit": "Sửa thông tin khách hàng",
-      "delete": "Xóa khách hàng"
-    },
     "customers": {
       "list": "Danh sách khách hàng",
       "create": "Thêm mới khách hàng",
       "edit": "Sửa thông tin khách hàng",
       "delete": "Xóa khách hàng"
-    },
-    "devices": {
-      "list": "Danh sách thiết bị",
-      "online": "Danh sách thiết bị online",
-      "delete": "Hủy đăng kí thiết bị",
-      "update": "Cập nhật danh sách thuê bao"
-    },
-    "assets": {
-      "list": "Danh sách nội dung",
-      "edit": "Cập nhật nội dung",
-      "delete": "Xóa nội dung",
-      "addLink": "Truyền phát từ Internet",
-      "addMessage": "Thêm một tin nhắn",
-      "validityTime": "Thiết lập thời gian hiệu lực",
-      "validityCal": "Thêm thời gian hiệu lực cho nội dung:"
-    },
-    "gcal": {
-      "subscribeGcal": "Subscribe to a Google Calendar for Events",
-      "gCalText": "You will be redirected to Google Accounts page now with the chosen ID as the account. \n After logging into the account, accept the permisson request from PiSignage app.",
-      "gUserID": "Google User ID "
-    },
-    "oohs": {
-      "list": "Danh sách vị trí OOH",
-      "create": "Thêm mới vị trí OOH",
-      "edit": "Sửa thông tin vị trí OOH",
-      "delete": "Xóa vị trí OOH"
-    },
-    "tags": {
-      "list": "Danh sách nhãn",
-      "create": "Thêm mới nhãn",
-      "edit": "Sửa nhãn",
-      "delete": "Xóa nhãn"
-    },
-    "groups": {
-      "list": "Danh sách nhóm phát",
-      "approve": "Phê duyệt nhóm phát",
-      "create": "Thêm mới nhóm phát",
-      "edit": "Sửa thông tin nhóm phát",
-      "delete": "Xóa nhóm phát"
-    },
-    "histories": {
-      "list": "Lịch sử phát sóng",
-      "detail": "Chi tiết lịch sử phát: '{{subject}}'",
-      "power": "Lịch sử bật/tắt của thiết bị: '{{subject}}'"
-    },
-    "export": {
-      "byCalendar": "Xuất file theo lịch cố định",
-      "broadcastHistory": "Xuất lịch sử phát sóng",
-      "powerLog": "Xuất lịch sử bật/tắt của thiết bị"
-    },
-    "playlists": {
-      "list": "Danh sách phát",
-      "create": "Thêm mới danh sách phát",
-      "edit": "Sửa thông tin danh sách phát",
-      "delete": "Xóa danh sách phát",
-      "upload": "Tải lên danh sách phát",
-      "assignDefault": "Gán nhóm phát mặc định"
-    },
-    "firmwares": {
-      "list": "Danh sách tệp tin",
-      "delete": "Xóa tệp tin"
     },
     "settings": "Thiết lập cài đặt",
     "login": "Sign In"
@@ -396,7 +189,6 @@
   "Label": {
     "all": "All",
     "address": "Địa chỉ",
-    "agency": "Đối tác",
     "amount": "Thành tiền",
     "area": "Khu vực",
     "asset": "Nội dung",
@@ -410,7 +202,6 @@
     "datetime": "Thời gian",
     "description": "Mô tả",
     "discount": "Chiết khấu",
-    "discountLimited": "Chiết khấu giới hạn",
     "introLink": "Link giới thiệu",
     "processing": "Đang xử lí...",
     "email": "Email",
@@ -433,322 +224,28 @@
     "latitude": "Vĩ độ",
     "size": "Kích thước",
     "type": "Phân loại",
-    "referralLink": "Liên kết giới thiệu",
     "resolution": "Độ phân giải",
     "value": "Giá trị",
     "startDate": "Ngày bắt đầu",
     "endDate": "Ngày kết thúc",
     "startTime": "Thời gian bắt đầu",
     "endTime": "Thời gian kết thúc",
-    "group": "Nhóm phát",
-    "playlist": "Danh sách phát",
-    "play": "Phát",
     "mute": "Tắt tiếng",
-    "playBackground": "Phát nền",
-    "broadcastSchedule": "Lịch phát",
-    "usePresentation": "Sử dụng chế độ thuyết trình",
-    "displayTimes": "Cài đặt số lần phát nội dung",
-    "fullScreen": "Xem toàn màn hình",
-    "ticker": "Cấu hình sticker",
-    "tickerSpeed": "Tốc độ ticker",
-    "playlistConfiguration": "Cấu hình danh sách phát",
-    "selectLayout": "Chọn bố cục cho danh sách phát",
-    "selectBackground": "Chọn giao diện hiển thị (mặc định 1)",
-    "sideAreaValue": "Giá trị vùng bên",
-    "underAreaValue": "Giá trị vùng dưới",
     "fileName": "Tên tệp",
     "fileType": "Loại tệp",
-    "typeLayout": "Loại layout",
-    "RSS": "Phân loại RSS",
-    "addressLink": "Địa chỉ liên kết",
     "zoomLevel": "Mức thu phóng",
     "CSS": "CSS tùy chọn",
-    "selectedGroup": "Nhóm được chọn cho thiết bị",
-    "deployDisplayGroup": "Triển khai nhóm phát",
-    "stopDeployDisplaygroup": "Ngừng triển khai nhóm phát",
-    "selectAddSchedule": "Bạn có thể chọn danh sách phát bổ sung",
-    "addPlaylist": "Danh sách phát bổ sung cho nhóm",
-    "changeAfterDisplay": "Thay đổi sau khi kết thúc danh sách phát hiện tại",
-    "defaultPlaylist": "Danh sách phát mặc định cho nhóm",
-    "displayWithFixedSchedule": "Phát cùng với danh sách phát được lên lịch",
-    "combineContent": "Kết hợp nội dung của tất cả các danh sách phát theo lịch",
-    "displayGroup": "Nhóm phát",
-    "addOrDelete": "Kéo để thêm/xoá",
-    "selectLabel": "Chọn nhãn",
     "setting": "Thiết lập",
     "upload": "Tải lên",
-    "tags": "Nhãn",
     "done": "% Done",
     "user": {
       "name": "Tên người dùng"
     },
-    "filterTags": {
-      "players": "Nhóm thiết bị",
-      "assets": "Nhóm nội dung"
-    },
     "settings": {
-      "receivedNotifyMail": "Thiết lập Email nhận thông báo",
-      "duration": "Thời lượng mặc định cho các slide",
-      "youtubedl": "Sử dụng chương trình youtube-dl để phát trực tiếp thay vì livestreamer",
-      "forcetvon": "Giữ TV hiển thị bằng cách gửi tin nhắn bật / tắt TV CEC cứ sau 3 phút",
-      "systemshow": "Ẩn tin nhắn hệ thống trên Màn hình TV (ví dụ: Đang tải xuống)",
-      "hidenotice": "Không hiển thị màn hình chào mừng"
-    },
-    "groups": {
-      "status": {
-        "pending": "Chờ triển khai",
-        "deployed": "Chờ xác nhận",
-        "approved": "Đã triển khai"
-      },
-      "settings": {
-        "title": "Chọn hướng và độ phân giải hiển thị",
-        "resizeScreen": "Đặt lại kích thước màn hình",
-        "directionTV": "Hướng TV",
-        "displayLogo": "Hiển thị Logo",
-        "showClock": "Đồng hồ hiển thị",
-        "selectImage": "Chọn một hình ảnh png",
-        "fitImage": "Fit image",
-        "fitVideo": "Fit video",
-        "reloadUrl": "URL Reload",
-        "breakVideo": "Break Video",
-        "breakVideo_1": "Stop video every seconds to show adverts",
-        "breakVideo_2": "(0 to disable)",
-        "useTvOffPlaylist": "Để kiểm soát tốt hơn, hãy sử dụng danh sách phát TV_OFF theo lịch trình nhóm",
-        "scheduleOff": "Lịch trình hiển thị TẮT",
-        "rebootEveryday": "Khởi động lại thiết bị hàng ngày"
-      }
-    },
-    "layoutDisplay": {
-      "tab1": "Bố cục",
-      "tab2": "Cửa sổ video chính",
-      "width": "Width",
-      "heigh": "Heigh",
-      "xPosition": "x position",
-      "yPosition": "y position",
-      "leftOffset": "Left-Offset",
-      "tab3": "Cửa sổ video bên/dưới",
-      "editLayout": "Thay đổi vị trí cửa sổ video cho các khu vực khác",
-      "topOffset": "Top-Offset",
-      "useFullscreen": "Sử dụng kích thước FULL SCREEN (cho màn hình tùy chỉnh)",
-      "descriptiontab1": "Màn hình có thể được chia thành nhiều vùng với mỗi vùng phát nội dung khác nhau. Tập tin video có thể được phát chỉ trong vùng chính. Chọn một tệp trong danh sách phát để phát trong vùng chính, thêm các tệp vùng khác bằng cách nhấp vào nút tập tin vùng. Nếu không có tệp nào được đính kèm vào một vùng cụ thể, nội dung trước đó cho vùng đó sẽ tiếp tục hiển thị.",
-      "descriptiontab2": "Thay đổi kích thước cửa sổ video của vùng chính. Phần này chỉ dành cho người dùng nâng cao!! Thay đổi bất kỳ tham số sẽ ảnh hưởng đến kích thước hiển thị video. Nếu gặp bất kỳ vấn đề nào, chỉ cần nhấp vào 'Khôi phục mặc định'. Các tham số 'Height' và 'Width' xác định kích thước cửa sổ thực tế, 'Off-offset' và 'Top-Offset' xác định vị trí của cửa sổ trên màn hình của bạn.",
-      "descriptiontab3": "Phần này chỉ dành cho bố cục tùy chỉnh !! Thay đổi bất kỳ tham số nào cũng sẽ ảnh hưởng đến kích thước hiển thị video ở vùng bên và phía dưới."
+      "receivedNotifyMail": "Thiết lập Email nhận thông báo"
     },
     "areas": {
       "name": "Tên Khu Vực"
-    },
-    "companies": {
-      "name": "Tên công ty"
-    },
-    "assets": {
-      "name": "Tên nội dung",
-      "times": "Số lần phát",
-      "liveorYouTube": "Livestreaming or YouTube",
-      "streaming": "Streaming",
-      "audioStreaming": "Audio Streaming",
-      "iframe": "Liên kết web (hiển thị trong iframe)",
-      "CrossOrifin": "Trang web (hỗ trợ liên kết cross origin)",
-      "mediaRSS": "Media RSS",
-      "addOtherZoneContent": "Thêm nội dung khu vực khác",
-      "playInZone": "Tập tin được phát trong vùng: {{zone}}"
-    },
-    "oohs": {
-      "flow": "Lưu lượng",
-      "light": "Chiếu sáng",
-      "vision": "Tầm nhìn"
-    },
-    "playlists": {
-      "default": "Danh sách phát mặc định:",
-      "additional": "Danh sách phát bổ sung:",
-      "schedule": "Danh sách phát theo lịch:",
-      "playlistName": "Tên danh sách phát"
-    },
-    "schedule": {
-      "textLabel": "Lịch trình",
-      "settingTime": "Đặt thời gian cho danh sách phát theo lịch",
-      "timeOfDay": "Lịch trình giữa hai ngày (bao gồm cả hai ngày đó)",
-      "timeOfMonth": "Lịch trình vào các ngày trong tuần hoặc trong tháng",
-      "specificTime": "Thời gian cụ thể trong ngày (ví dụ 7AM - 11AM)",
-      "start_at": "Bắt đầu",
-      "finish_at": "Kết thúc",
-      "dayOfWeek": "Ngày trong tuần",
-      "dayOfMonth": "Ngày trong tháng",
-      "calendar": "Lịch",
-      "start": "Bắt đầu",
-      "finish": "Kết thúc",
-      "notSet": "Không đặt lịch"
-    }
-  },
-  "Popup": {
-    "Advertise": {
-      "text1": "Make this as Advt. Playlist",
-      "text2": "By making this as Advt. playlist, you can insert the assets of this playlist periodically in between the currently playing playlist.",
-      "text3": "Make this as Advt. Playlist",
-      "text4": "You can play the assets only on side and banner zones by disabling main zone here. \n Still you have to select dummy file for main zone ",
-      "text5": "Play only in side/banner zones",
-      "text6": "Play this playlist only once during selected duration",
-      "text7": "Play this playlist once every selected duration by stopping regular playlist, \n acts like insertion of advt at fixed intervals",
-      "text8": "Play this as independent Audio Playlist for the aux port",
-      "text9": "In addition to signage functionality, you can play audio from a playlist \n through the 3.5mm jack",
-      "text10": "Play songs from this playlist (need to contain only mp3 files)",
-      "text11": "Play in random order",
-      "text12": "Output audio in HDMI port also",
-      "text13": "Make this as Event Playlist",
-      "text14": "When SIGUSR2 event is signalled this playlist is played if eligible",
-      "text15": "Duration of the playlist, 0 to play till next event",
-      "text16": "Play this playlist only when online",
-      "text17": "Schedule this playlist to play only when player is online",
-      "enable": "Enable (Domination Content)"
-    },
-    "emergencyMessage": {
-      "text1": "Hiển thị một tin nhắn văn bản ở phía trước của nội dung hiển thị",
-      "position": "Vị trí",
-      "positionSetting": {
-        "top": "Trên cùng",
-        "center": "Chính giữa",
-        "buttom": "Dưới cùng"
-      }
-    },
-    "streaming": {
-      "trackingDevice": "Theo dõi thiết bị",
-      "textWarning": "Ghi chú: Thiết bị streaming sẽ dừng lại sau 5 phút"
-    },
-    "shell": {
-      "lastSnapshot": "Chụp gần nhất",
-      "checkLogCommand": "Để kiểm tra lịch sử lệnh, hãy sử dụng phím sau",
-      "devices": {
-        "isOffline": "Thiết bị '{{player}}' đang OFFLINE",
-        "tracking": "Giám sát thiết bị '{{player}}'"
-      }
-    },
-    "AssetsDetail": {
-      "type": "Loại",
-      "rssText": "RSS Text",
-      "customizeCSS": "CSS (tuỳ chọn)",
-      "keyStrokes": "Send Keystrokes",
-      "referURL": "(optional for key definitions refer http://robotjs.io/docs/syntax#keys)",
-      "chooseCalendar": "Choose a Calendar for subscribing to Events"
-    },
-    "groupChange": {
-      "settings": "Thiết Lập",
-      "settingWifi": "Thiết lập wifi",
-      "setWIFI": "SET WIFI",
-      "setScreenMode": "Thiết lập mode màn hình",
-      "scanWifi": "Scan WIFI",
-      "selectedGroup": "Nhóm được chọn",
-      "deleteDevice": "Xóa thiết bị khỏi cơ sở dữ liệu máy chủ"
-    },
-    "confirm": {
-      "msg": "Vui lòng xác nhận",
-      "delete": "Bạn có muốn xóa",
-      "updateFW": "Do you want to update latest firmware?",
-      "updateSoft": "Software Update"
-    },
-    "records": {
-      "title": "Thêm mới tệp ghi âm",
-      "desc_1": "Format: start recording to see sample rate",
-      "desc_2": "Recordings"
-    },
-    "listFile": {
-      "title": "Tệp tin có sẵn"
-    },
-    "ticker": {
-      "notifyPlaylist": "Thông báo cho danh sách phát",
-      "ticker": "Ticker",
-      "tickerType": "Kiểu",
-      "left": "Trái",
-      "right": "Phải",
-      "VG": "OpenVG",
-      "addMessageTicker": "Thêm tin nhắn cho ticker",
-      "fontSize": "Cỡ chữ",
-      "width": "Chiều rộng",
-      "positionx": "vị trí x",
-      "positiony": "vị trí y"
-    },
-    "layoutOptions": {
-      "1": {
-        "title": "Hiển thị 1 vùng",
-        "desc": "Vùng chính:1280x720"
-      },
-      "2a": {
-        "title": "2 vùng với vùng chính bên phải",
-        "desc": "Vùng chính:960x720, Vùng bên:320x720"
-      },
-      "2b": {
-        "title": "2 vùng với vùng chính bên trái",
-        "desc": "Vùng chính:960x720, Vùng bên:320x720"
-      },
-      "2c": {
-        "title": "Hai vùng kích thước bằng nhau với khu vực video ở bên trái",
-        "desc": "Vùng chính:640x720, Vùng bên:640x720"
-      },
-      "2d": {
-        "title": "Hai vùng kích thước bằng nhau với khu vực video ở bên phải",
-        "desc": "Vùng chính:640x720, Vùng bên:640x720"
-      },
-      "3a": {
-        "title": "Ba vùng (full bottom) với vùng chính ở bên phải",
-        "desc": "Vùng chính:960x540, Vùng bên:320x540, Vùng dưới:1280x180"
-      },
-      "3b": {
-        "title": "Ba vùng (full bottom) với vùng chính ở bên trái",
-        "desc": "Vùng chính:960x540, Vùng bên:320x540, Vùng dưới:1280x180"
-      },
-      "3c": {
-        "title": "Ba vùng (full top) với vùng chính ở bên phải (bật trong cài đặt)",
-        "desc": "Vùng chính:960x540, Vùng bên:320x540, Vùng banner:1280x180"
-      },
-      "3d": {
-        "title": "Ba vùng (full top) với vùng chính ở bên trái (bật trong cài đặt)",
-        "desc": "Vùng chính:960x540, Vùng bên:320x540, Vùng banner:1280x180"
-      },
-      "4a": {
-        "title": "Ba vùng (full side) với vùng chính ở bên phải",
-        "desc": "Vùng chính:960x540, Vùng bên:320x720, Vùng dưới:960x180"
-      },
-      "4b": {
-        "title": "Ba vùng (full side) với vùng chính ở bên trái",
-        "desc": "Vùng chính:960x540, Vùng bên:320x720, Vùng dưới:960x180"
-      },
-      "4c": {
-        "title": "Ba vùng (full side) với vùng chính ở bên phải (bật trong cài đặt)",
-        "desc": "Vùng chính:960x540, Vùng bên:320x720, Vùng banner:960x180"
-      },
-      "4d": {
-        "title": "Ba vùng (full side) với vùng chính ở bên trái (bật trong cài đặt)",
-        "desc": "Vùng chính:960x540, Vùng bên:320x720, Vùng banner:960x180"
-      },
-      "2ap": {
-        "title": "Chế độ Portrait 1 vùng, hướng theo chiều kim đồng hồ",
-        "desc": "Vùng chính:720x1280"
-      },
-      "2bp": {
-        "title": "Chế độ Portrait 2 vùng, hướng theo chiều kim đồng hồ",
-        "desc": "Vùng trên:720x540,Vùng dưới:720x740"
-      },
-      "2ap270": {
-        "title": "Chế độ Portrait 1 vùng, hướng ngược chiều kim đồng hồ",
-        "desc": "Vùng chính: 720x1280"
-      },
-      "2bp270": {
-        "title": "Chế độ Portrait 2 vùng, hướng ngược chiều kim đồng hồ",
-        "desc": "Vùng trên:720x540,vùng dưới:720x740"
-      },
-      "custom": {
-        "title": "Bố cục tùy chỉnh trong chế độ Landscape Mode",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content"
-      },
-      "customp": {
-        "title": "Bố cục tùy chỉnh trong chế độ Portrait, hướng theo chiều kim đồng hồ",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content"
-      },
-      "customp270": {
-        "title": "Bố cục tùy chỉnh trong chế độ Portrait, hướng ngược chiều kim đồng hồ",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content "
-      }
-    },
-    "validityCal": {
-      "desc": "Bạn có thể thêm thời hạn hiệu lực cho một nội dung được hiển thị trên màn hình"
     }
   },
   "Placeholder": {
@@ -762,55 +259,25 @@
     "password": "Mật khẩu",
     "rePassword": "Nhập lại mật khẩu",
     "oldPassword": "Nhập mật khẩu xác thực",
-    "inputMessage": "Hãy nhập tin nhắn sẽ hiển thị",
     "newPassword": "Nhập mật khẩu mới",
-    "entervalue": "Enter value in %",
-    "enterValueSeconds": "Enter value in seconds",
     "longitude": "Kinh độ",
     "latitude": "Vĩ độ",
     "price": "Giá tiền",
     "discount": "Chiết khấu",
-    "starttime": "Giờ bắt đầu",
-    "endtime": "Giờ kết thúc",
+    "startTime": "Giờ bắt đầu",
+    "endTime": "Giờ kết thúc",
     "user": {
-      "name": "Tên người dùng",
-      "ggID": "Enter Your Google User ID"
-    },
-    "companies": {
-      "address": "Địa chỉ công ty"
-    },
-    "add": {
-      "group": "Thêm nhóm phát mới",
-      "playlist": "Thêm danh sách phát",
-      "tag": "Thêm nhãn mới"
-    },
-    "addTicker": {
-      "enterMes": "Enter messages here",
-      "enterRSS": "enter your rss link ...."
-    },
-    "playlist": {
-      "times": "Số lần",
-      "addPlaylist": "Thêm danh sách phát",
-      "playlistName": "Tên danh sách phát",
-      "group": "Nhóm phát"
-    },
-    "addData": {
-      "saveFileInFolder": "Dữ liệu sẽ được lưu trong tập tin này",
-      "durationFeedItem": "Duration of each feed item",
-      "blankforNo_zoom": "Leave blank for no-zoom"
-    },
-    "chooseFile": "Select a custom_layout*.html file from Assets"
+      "name": "Tên người dùng"
+    }
   },
   "Table": {
     "No": "STT",
     "action": "Hành Động",
     "address": "Địa Chỉ",
     "ipAddress": "Địa Chỉ IP",
-    "agency": "Đối Tác",
     "amount": "Thành Tiền",
     "area": "Khu Vực",
     "code": "Mã",
-    "company": "Công Ty",
     "customer": "Khách Hàng",
     "capacity": "Không Gian Lưu Trữ",
     "createdAt": "Ngày Tạo",
@@ -821,7 +288,6 @@
     "time": "Thời gian",
     "detail": "Thông Tin Chi Tiết",
     "duration": "Thời Lượng (giây)",
-    "airtime": "Thời Lượng Phát Sóng (giây)",
     "uptime": "Thời Gian Hoạt Động",
     "discount": "Chiết Khấu %",
     "tagName": "Tên",
@@ -841,28 +307,11 @@
     "size": "Kích Thước",
     "type": "Phân Loại",
     "thumbnail": "Hình Nhỏ",
-    "tags": "Nhãn",
-    "statistical": "Thống kê",
-    "validityTime": "Thời Gian Hiệu Lực",
-    "group": "Nhóm Phát",
     "areas": {
       "name": "Tên Khu Vực"
     },
     "companies": {
       "name": "Tên Công Ty"
-    },
-    "assets": {
-      "name": "Tên Nội Dung",
-      "times": "Số Lần Phát"
-    },
-    "devices": {
-      "code": "Mã Thiết Bị",
-      "name": "Tên Thiết Bị",
-      "group": "Nhóm Thiết Bị",
-      "currentPlaylist": "Nội Dung Đang Phát"
-    },
-    "playlists": {
-      "name": "Tên Danh Sách Phát"
     },
     "subscription": "Thuê Bao",
     "subscriptions": {
@@ -876,42 +325,20 @@
     "unlockAccount": "Bạn có muốn mở khóa tài khoản '{{subject}}'?",
     "restoreAccount": "Bạn có muốn khôi phục tài khoản '{{subject}}'?",
     "edit": {
-      "assets": "Đổi tên hoặc xóa tập tin, nhấn Xong khi hoàn thành"
+
     },
     "delete": {
       "account": "Bạn có muốn xóa tài khoản '{{subject}}'?",
-      "company": "Bạn có muốn xóa khách hàng '{{subject}}'?",
+      "customer": "Bạn có muốn xóa khách hàng '{{subject}}'?",
       "file": "Bạn có muốn xóa tệp '{{subject}}'?",
-      "tags": "Bạn có muốn xóa nhãn '{{subject}}'?",
-      "areas": "Bạn có muốn xóa khu vực '{{subject}}'?",
-      "group": "Bạn có muốn xóa nhóm phát '{{subject}}'?",
-      "playlist": "Bạn có muốn xóa danh sách phát '{{subject}}'?",
-      "oohs": "Bạn có muốn xóa vị trí '{{subject}}'?"
-    },
-    "playlist": {
-      "change": "Bạn có muôn thay đổi nhóm phát thành '{{subject}}'?"
-    },
-    "devices": {
-      "reboot": "Bạn có muốn khởi động lại thiết bị?",
-      "Sigusr2": "Bạn có muốn gửi command Sigusr2 đến thiết bị?",
-      "changeCustomer": "Bạn có muốn thay đổi khách hàng cho thiết bị?",
-      "cancel": "Bạn có muốn hủy đăng ký thiết bị không?",
-      "changeArea": "Bạn có muốn thay đổi khu vực cho thiết bị?",
-      "update": "Bạn có muốn cập nhật danh sách thuê bao?"
+      "areas": "Bạn có muốn xóa khu vực '{{subject}}'?"
     }
   },
   "Notification": {
-    "noAssets": "Không có gì để hiển thị, Sử dụng nút 'Thêm' để thêm nội dung hoặc 'Gán nội dung' để gán nội dung cho danh sách phát",
-    "noContents": "Không có nội dung hiển thị",
-    "noData": "Không có gì để hiển thị, Vui lòng kéo nội dung vào hộp này",
-    "noPlaylist": "Không có danh sách triển khai",
-    "noDevices": "Không có thiết bị",
-    "maxGroupPlaylist": "Danh sách phát tối đa được phép là 30"
+
   },
   "Message": {
-    "descDefaultGroup": "Danh sách phát mặc định được phát khi không có danh sách phát theo lịch",
     "pleaseWait": "Xin vui lòng chờ",
-    "sendRequest": "Yêu cầu của bạn đã được gửi, Vui lòng làm mới trang sau 10 giây",
     "convert": "Nếu cần chuyển đổi định dạng, sẽ mất vài phút để xuất hiện trong danh sách nội dung",
     "inputTime": {
       "start": "Vui lòng nhập thời gian bắt đầu",
@@ -921,51 +348,17 @@
     "file": {
       "exist": "Tên tệp đã tồn tại"
     },
-    "playlist": {
-      "notExist": "Không tồn tại danh sách phát",
-      "notfound": "Không tìm thấy nhóm phát này"
-    },
-    "snapshoot": {
-      "captured": "Đã thực hiện chụp màn hình",
-      "capturing": "đang thực hiện chup màn hình",
-      "previousShoot": "Thiết bị đang OFF, gửi ảnh chụp trước đó",
-      "cannotCapture": "Không thể chụp màn hình",
-      "sendCapture": "Đã gửi lệnh dừng chụp ảnh màn hình",
-      "timeout": "Không thể nhận được phản hồi từ thiết bị, Hãy chắc chắn rằng thiết bị đang trực tuyến và thử lại.",
-      "shellResult": "Kết quả thực thi lệnh Shell"
-    },
     "error": {
       "upload": "Lỗi tải lên",
       "process": "Lỗi xử lý",
       "occur": "Có lỗi xảy ra",
       "login": "Tên đăng nhập hoặc mật khẩu không đúng",
       "permission": "Bạn không có quyền truy cập.",
-      "deploy": "Triển khai thất bại",
-      "offlineFW": "Thiết bị đang offline. Không thể cập nhật firmware lúc này",
-      "offlineDevice": "Thiết bị đang offline. Không thể thực hiện lệnh lúc này",
-      "inputData": "Lỗi dữ liệu đầu vào",
-      "shell": "Nhập lệnh shell...",
-      "change": "Không thể thay đổi!",
-      "streaming": "Thiêt bị đang streaming",
-      "notUploadFw": "Can not upload firmware. File type is not an application/gzip"
+      "inputData": "Lỗi dữ liệu đầu vào"
     },
     "success": {
-      "deploy": "Triển khai thành công",
-      "sentRequest": "Đã triển khai! Yêu cầu đã được gửi đến tất cả các thiết bị.",
       "save": "Lưu thành công",
-      "editDevices": "Cập nhật thông tin thiết bị thành công",
-      "reboot": "Đã gửi lệnh reboot",
-      "sigusr2": "Đã gửi lệnh cmd sigusr2",
       "upload": "Hoàn tất tải lên"
-    },
-    "area": {
-      "delete": "Bạn có muốn xóa khu vực"
-    },
-    "oohs": {
-      "delete": "Bạn có muốn xóa ooh"
-    },
-    "tags": {
-      "exist": "Nhãn đã tồn tại"
     }
   },
   "Validate": {

@@ -59,26 +59,10 @@ server.on('error', (err) => {
   throw Error(err.message)
 });
 // ************************************************** //
-server.on('connection', (socket) => {
-  // 60 minutes timeout
-  socket.setTimeout(3600000);
-});
-// ************************************************** //
-// **************** init socket.io ****************** //
-const options = {
-  path: '/newsocket.io',
-  serveClient: true,
-  // below are engine.IO options
-  pingInterval: 45000,
-  pingTimeout: 45000,
-  upgradeTimeout: 60000,
-  maxHttpBufferSize: 10e7
-};
-// const ioNew = require('socket.io')(server, options);
-// const io = require('919.socket.io').listen(server);
-// ****************** load socket ******************* //
-// require('../../app/Common/SocketIO/old').startSIO(io);
-// require('../../app/Common/SocketIO/new').startSIO(ioNew);
+// server.on('connection', (socket) => {
+//   // 60 minutes timeout
+//   socket.setTimeout(3600000);
+// });
 // ************************************************** //
 // *************** init schedule job **************** //
 require('../../app/Cronjob').start();

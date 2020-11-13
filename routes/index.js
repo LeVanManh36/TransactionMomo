@@ -1,23 +1,14 @@
 'use strict';
 
-const multer = require('multer');
+// const multer = require('multer');
 const Router = require('../libs/Router');
-const {AUTH_TYPE, licenseDir, releasesDir, temporaryDir, roles} = require('../config');
-let ctrlAuth, ctrlAccount, ctrlUser, ctrlUserDisabled;
-if (AUTH_TYPE === "local") {
-  ctrlAuth = require('../app/Controllers/AuthController');
-  ctrlAccount = require('../app/Controllers/AccountController');
-  ctrlUser = require('../app/Controllers/UserController');
-  ctrlUserDisabled = require('../app/Controllers/UserDisabledController');
-} else {
-  ctrlAuth = require('../app/Controllers/GRPC/AuthController');
-  ctrlAccount = require('../app/Controllers/GRPC/AccountController');
-  ctrlUser = require('../app/Controllers/GRPC/UserController');
-}
+const {roles} = require('../config');
+const ctrlAuth = require('../app/Controllers/AuthController');
+const ctrlAccount = require('../app/Controllers/AccountController');
+const ctrlUser = require('../app/Controllers/UserController');
+const ctrlUserDisabled = require('../app/Controllers/UserDisabledController');
 const ctrlProfile = require('../app/Controllers/ProfileController');
 const ctrlArea = require('../app/Controllers/AreaController');
-const ctrlCompany = require('../app/Controllers/CompanyController');
-const ctrlOOHPosition = require('../app/Controllers/OOHPositionController');
 // const ctrlTest = require('../app/Controllers/TestController');
 
 // Middleware
@@ -25,10 +16,6 @@ const middleware = require('../app/Middleware');
 const ExtendResponse = middleware.extendResponse;
 // header validation
 const header_validation = require('./header_validation');
-// config upload folder
-const upload = multer({dest: temporaryDir});
-const uploadFirmware = multer({dest: releasesDir});
-const uploadLicense = multer({dest: licenseDir});
 
 /**
  * Application routes
@@ -66,10 +53,6 @@ module.exports = (app) => {
     router.get('/profile', ctrlProfile.getProfile);
     // Route areas
     router.get('/areas', ctrlArea.index);
-    // Routes companies
-    router.get('/companies', ctrlCompany.index)
-    // Routes ooh-positions
-    router.get('/ooh-positions', ctrlOOHPosition.index);
 
     // TODO Routes roles = [roles.root, roles.admin]
     router.group({middlewares: [middleware.role(roles.root, roles.admin)]}, (router) => {
@@ -115,24 +98,6 @@ module.exports = (app) => {
       router.put('/areas/:areaId', ctrlArea.update);
       router.delete('/areas/:areaId', ctrlArea.destroy);
       router.post('/areas/deleteMulti', ctrlArea.deleteMulti);
-
-      // Routes companies
-      // router.get('/companies', ctrlCompany.index)
-      router.post('/companies', ctrlCompany.store)
-      router.param('companyId', ctrlCompany.load)
-      router.get('/companies/:companyId', ctrlCompany.detail)
-      router.put('/companies/:companyId', ctrlCompany.update)
-      router.delete('/companies/:companyId', ctrlCompany.destroy)
-      router.post('/companies/deleteMulti', ctrlCompany.deleteMulti);
-
-      // Routes ooh-positions
-      // router.get('/ooh-positions', ctrlOOHPosition.index);
-      router.post('/ooh-positions', ctrlOOHPosition.store);
-      router.param('oohPositionId', ctrlOOHPosition.load);
-      router.get('/ooh-positions/:oohPositionId', ctrlOOHPosition.detail);
-      router.put('/ooh-positions/:oohPositionId', ctrlOOHPosition.update);
-      router.delete('/ooh-positions/:oohPositionId', ctrlOOHPosition.destroy);
-      router.post('/ooh-positions/deleteMulti', ctrlOOHPosition.deleteMulti);
     });
   });
 

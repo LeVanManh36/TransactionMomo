@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-const {SECRET_KEY, SECRET_KEY_PI} = require('../config/env/auth');
+const {SECRET_KEY} = require('../config/env/auth');
 
 module.exports = {
   
@@ -50,22 +50,6 @@ module.exports = {
 
   verify(token, cb) {
     jwt.verify(token, SECRET_KEY, (err, payload) => {
-      if (err) return cb(err);
-      return cb(null, payload)
-    })
-  },
-
-  generatePiToken() {
-    return jwt.sign({
-      author: "MQ_ICT_SOLUTION",
-      ver: "2020",
-      user: "pi",
-      name: "Digital Device",
-    }, SECRET_KEY_PI); // DO NOT KEEP YOUR SECRET IN THE CODE!
-  },
-
-  verifyPiToken(token, cb) {
-    jwt.verify(token, SECRET_KEY_PI, (err, payload) => {
       if (err) return cb(err);
       return cb(null, payload)
     })

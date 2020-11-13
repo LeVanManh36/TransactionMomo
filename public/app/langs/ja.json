@@ -11,10 +11,6 @@
     "save": "保存",
     "delete": "削除",
     "detail": "詳細",
-    "deleteDevice": "削除",
-    "saveAddress": "住所を保存",
-    "savePrice": "価格を保存",
-    "saveDiscount": "割引率を保存",
     "view": "閲覧",
     "back": "戻る",
     "close": "閉じる",
@@ -33,77 +29,31 @@
     "upload": "アップロード",
     "googleMap": "Googleマップ",
     "make": "作成",
-    "deploy": "展開",
-    "deployAll": "すべて展開する",
-    "unDeploy": "展開を停止する",
-    "unDeployAll": "すべての展開を停止する",
-    "approve": "承認",
-    "approveAll": "全てを承認する",
-    "disapprove": "不承認",
-    "disapproveAll": "全てを不承認する",
     "execute": "実行",
     "record": "録音",
     "stop": "終了",
-    "schedule": "スケジュール設定",
     "setting": "設定",
-    "sigusr2": "SIGUSR2",
     "restoreDefault": "デフォルトを復元",
     "saveChange": "保存",
-    "assignContent": "コンテンツを追加",
-    "restoreSideArea": "側方のデフォルトを復元",
-    "restoreUnderArea": "下部のデフォルトを復元",
-    "assignGroupDefault": "自動追加",
-    "takeSnapshot": "スクリーンショット",
     "continue": "続く",
     "skip": "スキップ",
     "select": "選択する",
-    "assignLabel": "ラベルを追加",
     "language": "言語",
     "exports": {
       "excel": "Excel出力",
       "html": "HTMLを出力する",
-      "pdf": "PDF出力",
-      "history": "再生履歴を出力",
-      "schedule": "再生スケジュールを出力",
-      "device": "デバイス一覧を出力",
-      "powerLog": "デバイスのオン・オフ履歴を出力"
+      "pdf": "PDF出力"
     },
     "_upload": {
-      "fw": "ファームウェアをアップロード",
-      "file": "ファイルをアップロード",
-      "playlist": "再生リストをアップロード",
-      "subscriptions": "ライセンスリスト更新"
+      "file": "ファイルをアップロード"
     },
     "add": {
       "account": "新しいアカウント追加",
-      "area": "エリアを追加",
-      "asset": "コンテンツを追加",
-      "company": "会社追加",
-      "customer": "顧客追加",
-      "tag": "TAGを追加",
-      "ooh": "OOHを追加",
-      "audio": "Audioファイル追加",
-      "link": "新規リンク追加",
-      "message": "メッセージ追加",
-      "validityTime": "有効期限追加",
-      "scheduleAdditionalPlaylist": "追加"
-    },
-    "groups": {
-      "emergency": "緊急メッセッジ",
-      "ticker": "グループ通知",
-      "setting": "グループ設定"
-    },
-    "streaming": {
-      "audio": "Audioのストリーミング",
-      "video": "ビデオのストリーミング",
-      "stop": "ストリーム停止"
+      "area": "エリアを追加"
     }
   },
   "Checkbox": {
-    "enableLog": "Bật lịch sử phát sóng",
-    "enableTracking": "Bật theo dõi thiết bị",
     "display": "表示",
-    "displayIndependently": "個別表示",
     "enable": "オン",
     "disable": "オフ",
     "positions": {
@@ -116,45 +66,6 @@
       "scrollLeft": "左に移動",
       "scrollRight": "右に移動"
     },
-    "tickerSpeed": {
-      "text": "ティッカースピード",
-      "slow": "低",
-      "medium": "中",
-      "fast": "高",
-      "full": "Full"
-    },
-    "typeGroupTicker": {
-      "text": "RSSを利用する",
-      "rssFeed": "RSS Feedを利用する",
-      "useRssDesc": "ヘッダーフィールドではなく、RSSストリームの説明フィールドを使用します",
-      "useRssEncoding": "RSSにバイナリエンコーディングを使用して、文字が正しく表示されない場合はこの機能を有効にします。",
-      "itemDuration": "時間",
-      "RSSlink": "RSS Feedにリンク",
-      "addMessageTicker": "ティッカーのコンテンツを入力してください。"
-    },
-    "settingGroupTicker": {
-      "label": "グループの通知",
-      "ticker": "ティッカー",
-      "show": "表示",
-      "type": "種類",
-      "slide": "スライド",
-      "scrollLeft": "左にスクロール",
-      "scrollRight": "右にスクロール",
-      "openVG": "VGを開ける",
-      "optionalCSS": "CSSのオプション",
-      "linkRss": "RSS Feedにリンク"
-    },
-    "resolutions": {
-      "720p": "HD(720p) 1280x720",
-      "1080p": "Full HD(1080p) 1920x1080",
-      "PAL": "PAL (RCA), 720x576",
-      "NTSC": "NTSC (RCA), 720x480"
-    },
-    "orientations": {
-      "landscape": "ランドスケープモード",
-      "portraitLeft": "ポートレート左モード（ハードウェア）",
-      "portraitRight": "ポートレート右モード（ハードウェア）"
-    },
     "animations": {
       "blend": "両方",
       "slideUp": "上向き",
@@ -162,49 +73,14 @@
       "slideLeft": "左向き",
       "slideRight": "右向き"
     },
-    "urlReload": {
-      "reload": "毎回URLをリロードする",
-      "fixed": "ウェブページをメモリに保持する"
-    },
-    "fitImageVideo": {
-      "actual": "実寸",
-      "letterBox": "レターボックス",
-      "stretched": "引き延ばす"
-    },
-    "settingPowerTime": {
-      "on": "有効日時",
-      "off": "終了日時"
-    },
-    "deployOptions": {
-      "combineDefaultPlaylist": "固定スケジュールの再生リストともに再生する",
-      "loadPlaylistOnCompletion": "現在の再生リストが終わった後変更する",
-      "playAllEligiblePlaylists": "スケジュールにより再生するリストのコンテンツをすべて組み合わせる",
-      "playScheduledPlaylist": "固定スケジュールにより再生する"
-    },
     "checkAll": "すべて選択",
     "uncheckAll": "レ点をすべて外す"
   },
   "Sidebar": {
     "accounts": "アカウント管理",
     "accounts_disabled": "無効アカウント管理",
-    "companies": "会社管理",
     "customers": "顧客管理",
     "areas": "エリア管理",
-    "oohs": "OOH管理",
-    "players": "デバイス管理",
-    "groups": "再生グループ管理",
-    "assets": "コンテンツ管理",
-    "playlist": "再生リスト管理",
-    "labels": "Tags管理",
-    "confirms": "コンテンツ承認",
-    "devices": {
-      "online": "オンライン中のデバイス一覧",
-      "tracking": "デバイス監視",
-      "streaming": "ライブストリーミング"
-    },
-    "histories": "再生履歴",
-    "firmwares": "ファームウェア管理",
-    "subscription": "ライセンス管理",
     "settings": "設定"
   },
   "Toolbar": {
@@ -224,18 +100,10 @@
     "minutes": "分",
     "seconds": "秒",
     "times": "回",
-    "aMonth": "１ヶ月",
     "version": "バージョン",
-    "lastSeen": "最終動作",
-    "lastSync": "最終同期",
-    "afterMinute": "毎",
-    "playAfter": "再生開始時間設定",
     "volume": "ボリューム",
-    "image": "画像",
-    "image&title": "画像とタイトル",
-    "image&description": "画像と説明",
     "tittle": "タイトル",
-    "descr": "説明",
+    "description": "説明",
     "duration": "時間",
     "message": "メッセージ",
     "zoomLevel": "ズームレベル",
@@ -264,10 +132,6 @@
       "ja": "日本語",
       "vi": "ベトナム語"
     },
-    "status": {
-      "upload": "アップロード状態",
-      "deploying": "展開中"
-    },
     "enable": "有効",
     "left": "左",
     "right": "右",
@@ -284,10 +148,6 @@
     "background": "背景",
     "12hours": "12時間制",
     "24hours": "24時間制",
-    "deploy": "展開",
-    "emptyContent": "空のコンテンツ",
-    "advt": "広告",
-    "dominate": "制御",
     "event": "イベント",
     "sound": "音",
     "checked": "checked",
@@ -317,77 +177,11 @@
       "edit": "エリア編集",
       "delete": "エリア削除"
     },
-    "companies": {
-      "list": "顧客一覧",
-      "create": "会社追加",
-      "edit": "会社の情報編集",
-      "delete": "顧客削除"
-    },
     "customers": {
       "list": "顧客一覧",
       "create": "顧客追加",
       "edit": "会社の情報編集",
       "delete": "顧客削除"
-    },
-    "devices": {
-      "list": "デバイス一覧",
-      "online": "オンライン中デバイス一覧",
-      "delete": "デバイス削除"
-    },
-    "assets": {
-      "list": "コンテンツ一覧",
-      "edit": "コンテンツ更新",
-      "delete": "コンテンツ削除",
-      "addLink": "インターネットから通信",
-      "addMessage": "メッセージ追加",
-      "validityTime": "有効時間設定",
-      "validityCal": "有効期限を追加する:"
-    },
-    "gcal": {
-      "subscribeGcal": "イベントにGoogleカレンダーを登録する",
-      "gCalText": "Googleアカウントページに選択したIDとしてリダイレクトされる。 \n ログインした後、PiSignageからの許可を受け入れる。",
-      "gUserID": "GoogleアカウントのID "
-    },
-    "oohs": {
-      "list": "OOH一覧",
-      "create": "OOHを追加する",
-      "edit": "OOHを編集する",
-      "delete": "OOH削除する"
-    },
-    "tags": {
-      "list": "TAGS一覧",
-      "create": "TAG追加",
-      "edit": "TAG編集",
-      "delete": "TAG削除"
-    },
-    "groups": {
-      "list": "再生リスト",
-      "approve": "再生グループを承認する",
-      "create": "再生グループを追加する",
-      "edit": "再生グループを編集する",
-      "delete": "再生グループを削除する"
-    },
-    "histories": {
-      "list": "再生履歴",
-      "detail": "再生履歴詳細: {{subject}}",
-      "power": "{{subject}} デバイスのオン・オフ履歴"
-    },
-    "export": {
-      "byCalendar": "固定スケジュールにより出力",
-      "broadcastHistory": "再生履歴により出力",
-      "powerLog": "デバイスのオン・オフ履歴を出力"
-    },
-    "playlists": {
-      "list": "再生リスト",
-      "create": "再生リスト追加",
-      "edit": "再生リスト編集",
-      "delete": "再生リスト削除",
-      "upload": "再生リストアップロード",
-      "assignDefault": "デフォルトの再生グループ追加"
-    },
-    "firmwares": {
-      "list": "ファイル一覧",
-      "delete": "ファイスを削除します"
     },
     "settings": "設定",
     "login": "ログイン"
@@ -395,7 +189,6 @@
   "Label": {
     "all": "すべて",
     "address": "住所",
-    "agency": "パートナー",
     "amount": "金額",
     "area": "エリア",
     "asset": "コンテンツ",
@@ -409,7 +202,6 @@
     "datetime": "時間",
     "description": "説明",
     "discount": "割引率 （％）",
-    "discountLimited": "限定割引率",
     "introLink": "紹介リンク",
     "processing": "処理中",
     "email": "メールアドレス",
@@ -432,322 +224,28 @@
     "latitude": "緯度",
     "size": "サイズ",
     "type": "種類",
-    "referralLink": "紹介リンク",
     "resolution": "解像度",
     "value": "価値",
     "startDate": "開始日付",
     "endDate": "終了日付",
     "startTime": "開始時間",
     "endTime": "終了時間",
-    "group": "再生グループ",
-    "playlist": "再生リスト",
-    "play": "再生",
     "mute": "ミュート",
-    "playBackground": "グラウンドに再生する",
-    "broadcastSchedule": "再生スケジュール",
-    "usePresentation": "プレゼンテーションモード使用",
-    "displayTimes": "コンテンツの再生回数",
-    "fullScreen": "全画面表示",
-    "ticker": "ティッカー構成",
-    "tickerSpeed": "ティッカースピード",
-    "playlistConfiguration": "再生リスト構成",
-    "selectLayout": "再生リストのレイアウト選択",
-    "selectBackground": "インターフェース選択（デフォルト1）",
-    "sideAreaValue": "側エリア値",
-    "underAreaValue": "下エリア側",
     "fileName": "ファイル名",
     "fileType": "ファイル種類",
-    "typeLayout": "レイアウト区別",
-    "RSS": "RSS区別",
-    "addressLink": "RSS リンクローカルアドレスを入力してください。",
     "zoomLevel": "ズームレベル",
     "CSS": "CSSカスタマイズ",
-    "selectedGroup": "選択されたグループ",
-    "deployDisplayGroup": "再生グループを展開する",
-    "stopDeployDisplaygroup": "再生グループを停止する",
-    "selectAddSchedule": "補完再生リスト選択",
-    "addPlaylist": "グループの補完再生リスト",
-    "changeAfterDisplay": "現在の再生リストが終わった後変更する",
-    "defaultPlaylist": "グループのデフォルト再生リスト:",
-    "displayWithFixedSchedule": "固定スケジュールの再生リストともに再生する",
-    "combineContent": "スケジュールにより再生するリストのコンテンツをすべて組み合わせる",
-    "displayGroup": "再生グループ",
-    "addOrDelete": "ドラッグして追加・削除することができる",
-    "selectLabel": "ラベルを選択する",
     "setting": "設定",
     "upload": "アップロード",
-    "tags": "ラベル",
     "done": " % 完了しました",
     "user": {
       "name": "ユーザー名"
-    },
-    "filterTags": {
-      "players": "デバイスのグループ",
-      "assets": "コンテンツのグループ"
-    },
-    "settings": {
-      "receivedNotifyMail": "メール通知の設定",
-      "duration": "スライドの再生時間",
-      "youtubedl": "livestreamerを使用せず、youtube-dlを使用してストリーミングする",
-      "forcetvon": "TVを常に表示するために、3分ずつTV CECをON/OFFすることを送信する",
-      "systemshow": "TV画面でメッセージを非表示にする（例：ダウンロードしています。）",
-      "hidenotice": "ようこそ画面を表示しない"
-    },
-    "groups": {
-      "status": {
-        "pending": "展開待ち",
-        "deployed": "承認待ち",
-        "approved": "展開済み"
-      },
-      "settings": {
-        "title": "ナビゲートと解像度を選択する",
-        "resizeScreen": "画面サイズの変更",
-        "directionTV": "TVの方向",
-        "displayLogo": "ロゴ表示 ",
-        "showClock": "時計の表示",
-        "selectImage": "pngの画像を選択する。",
-        "fitImage": "画像に合わせる",
-        "fitVideo": "映像に合わせる",
-        "reloadUrl": "URL Reload",
-        "breakVideo": "Break Video",
-        "breakVideo_1": "広告を挿入するためにビデオを秒数に停止する",
-        "breakVideo_2": "（無効にする場合は0)",
-        "useTvOffPlaylist": "細かく制御できるために、グループのスケジュールに従ってTV_OFFの再生リストを利用してください。",
-        "scheduleOff": "再生しないスケジュール",
-        "rebootEveryday": "毎日デバイスの再起動"
-      }
-    },
-    "layoutDisplay": {
-      "tab1": "レイアウト",
-      "tab2": "メインウィンドウ",
-      "width": "幅",
-      "heigh": "高さ",
-      "xPosition": "x軸",
-      "yPosition": "y軸",
-      "leftOffset": "画面左からの距離",
-      "tab3": "側/下のビデオウィンドウ",
-      "editLayout": "他のエリアにビデオウィンドウの位置変更",
-      "topOffset": "画面上からの距離",
-      "useFullscreen": "フルスクリーンサイズを使用（カスタム画面用）",
-      "descriptiontab1": "画面を複数のエリアに分割できます。 エリアごとに異なるコンテンツを再生します。ビデオがメインエリアのみに再生されます。再生リストのファイルを選択し、メインエリアに再生します。ビデオを追加したい場合、他のエリアにファイル追加のボタンをクリックしてください。特定のエリアにファイルがない場合、以前のコンテンツが引き続き再生されます。　　　　\n　※初期表示：1",
-      "descriptiontab2": "メインエリアにビデオウィンドウズのサイズを変更します。こちらは上級ユーザー向けです。パラメータを変更すると、ビデオの表示サイズが変更されるようになります。もし、変更する時、何か問題が発生すれば、「クリア」にクリックしてください。ビデオウィンドウズの「高さ」と「幅」などの実寸を確定できます。「画面左からの距離」と「画面上からの距離」によって画面にウィンドウズの位置が確定されます。",
-      "descriptiontab3": "この部分はレイアウトカスタマイズ用のみです。以下のパラメータを変更すると、側エリアと下部にビデオの表示サイズに影響を与えます。"
     },
     "areas": {
       "name": "エリア名"
     },
     "companies": {
       "name": "会社名"
-    },
-    "assets": {
-      "name": "コンテンツ",
-      "times": "再生回数",
-      "liveorYouTube": "ライブストリーミングまたはYouTube",
-      "streaming": "ストリーミング",
-      "audioStreaming": "オーディオストリーミング",
-      "iframe": "Webリンク（iframeに表示）",
-      "CrossOrifin": "ウェブサイト (Cross originリンクを対応する)",
-      "mediaRSS": "Media RSS",
-      "addOtherZoneContent": "残りのエリアにコンテンツを追加する",
-      "playInZone": "{{zone}}のエリアにコンテンツを追加する"
-    },
-    "oohs": {
-      "flow": "流れ",
-      "light": "照度",
-      "vision": "視程"
-    },
-    "playlists": {
-      "default": "デフォルトの再生リスト:",
-      "additional": "補完再生リスト:",
-      "schedule": "スケジュールによる再生リスト:",
-      "playlistName": "再生リスト"
-    },
-    "schedule": {
-      "textLabel": "スケジュール",
-      "settingTime": "スケジュールによる再生リストの時間を設定します。",
-      "timeOfDay": "時間範囲のスケジュール",
-      "timeOfMonth": "週または月の日のスケジュール",
-      "specificTime": "特定の時間　 (例：7AM - 11AM)",
-      "start_at": "開始",
-      "finish_at": "完了",
-      "dayOfWeek": "週の日",
-      "dayOfMonth": "月の日",
-      "calendar": "スケジュール",
-      "start": "開始",
-      "finish": "終了",
-      "notSet": "スケジュールを選択しない"
-    }
-  },
-  "Popup": {
-    "Advertise": {
-      "text1": "広告再生リストとして作成する",
-      "text2": "広告再生リストとしての作成で再生中プレイリストの間に定期的に再生されるビデオを挿入できる。",
-      "text3": "広告再生リストとして作成する",
-      "text4": "メインエリアを無効にすることで、側エリアと下エリアでのみコンテンツを再生する。\n しかし、メインエリアにダミーコンテンツを追加する必要がある。",
-      "text5": "側エリア/下エリアのみ再生する",
-      "text6": "指定期間中にこの再生リストを1度だけ再生する",
-      "text7": "指定時間に普通の再生リストを停止して、一定の間隔でビデオを挿入する。",
-      "text8": "補助ポートに個別Audio再生リストとして作成する",
-      "text9": "サイネージ機能に加えて、3.5mmジャックを介して再生リストからAudioを再生できる",
-      "text10": "この再生リストから曲を再生する（mp3ファイルのみ）",
-      "text11": "シャッフル再生",
-      "text12": "HDMIポートでAudio出力",
-      "text13": "イベント再生リストとして作成する",
-      "text14": "SIGUSR2イベントが通知される時、資格があればこの再生リストが再生される",
-      "text15": "再生期間設定 \n (0に設定すれば次のイベントがすぐ再生される)",
-      "text16": "オンライン時のみこのリストを再生する",
-      "text17": "この再生リストのスケジュールがユーザーがオンラインのときにのみ再生される。",
-      "enable": "有効（支配コンテンツ）"
-    },
-    "emergencyMessage": {
-      "text1": "サイネージに緊急メッセージを表示します",
-      "position": "位置",
-      "positionSetting": {
-        "top": "上部",
-        "center": "中部",
-        "buttom": "下部"
-      }
-    },
-    "streaming": {
-      "trackingDevice": "デバイス監視",
-      "textWarning": "注意: ストリーミングデバイスは5分後に停止する"
-    },
-    "shell": {
-      "lastSnapshot": "最終キャプチャー",
-      "checkLogCommand": "コマンド履歴をチェックするため、次のキーを使用する",
-      "devices": {
-        "isOffline": "'{{player}}'はオフラインしています",
-        "tracking": "'{{player}}'を監視しています"
-      }
-    },
-    "AssetsDetail": {
-      "type": "タイプ",
-      "rssText": "RSS文言",
-      "customizeCSS": "CSSカスタマイズ",
-      "keyStrokes": "キーストロークの送信 (オプション)",
-      "referURL": "こちらのリンクをご参考ください ：http://robotjs.io/docs/syntax#keys ",
-      "chooseCalendar": "イベントにカレンダーを選択する"
-    },
-    "groupChange": {
-      "settings": "設定",
-      "settingWifi": "WiFi設定",
-      "setWIFI": "WIFI設定",
-      "setScreenMode": "画面モードの設定",
-      "scanWifi": "Scan WIFI",
-      "selectedGroup": "選択されたグループ",
-      "deleteDevice": "サーバーのデータベースからデバイスを削除する"
-    },
-    "confirm": {
-      "msg": "確認",
-      "delete": "削除してもよろしいですか。",
-      "updateFW": "最新のファームウェアを更新してもよろしいですか。",
-      "updateSoft": "ソフトウェアを更新してもよろしいですか。"
-    },
-    "records": {
-      "title": "新しい録音ファイルを追加する",
-      "desc_1": "フォーマット:サンプルレートから録音られる",
-      "desc_2": "録音"
-    },
-    "listFile": {
-      "title": "利用可能なファイル"
-    },
-    "ticker": {
-      "notifyPlaylist": "再生リストに通知",
-      "ticker": "ティッカー",
-      "tickerType": "タイプ",
-      "left": "左",
-      "right": "右",
-      "VG": "VGを開ける",
-      "addMessageTicker": "ティッカーのコンテンツを作成する",
-      "fontSize": "フォントサイズ",
-      "width": "幅",
-      "positionx": "x軸",
-      "positiony": "y軸"
-    },
-    "layoutOptions": {
-      "1": {
-        "title": "１つのエリアを表示する",
-        "desc": "メインエリア: 1280x720"
-      },
-      "2a": {
-        "title": "2エリア、メインエリアは右側",
-        "desc": "メインエリア:960x720, 側エリア:320x720"
-      },
-      "2b": {
-        "title": " 2エリア、メインエリアは左側",
-        "desc": "メインエリア:960x720, 側エリア:320x720"
-      },
-      "2c": {
-        "title": " 2つのエリアサイズが同じ、動画エリアは左側",
-        "desc": "メインエリア:640x720, 側エリア:640x720"
-      },
-      "2d": {
-        "title": "2つのエリアサイズが同じ、動画エリアは右側",
-        "desc": "メインエリア:640x720, 側エリア:640x720"
-      },
-      "3a": {
-        "title": " 3エリア(full bottom)、メインエリアは右側",
-        "desc": "メインエリア:960x540, 側エリア:320x540, 下エリア:1280x180"
-      },
-      "3b": {
-        "title": "3エリア(full bottom)、メインエリアは左側",
-        "desc": "メインエリア:960x540, 側エリア:320x540, 下エリア:1280x180"
-      },
-      "3c": {
-        "title": "3エリア（フルトップ）、右側にメインエリア（設定で有効）",
-        "desc": "メインエリア:960x540, 側エリア:320x540, バナーエリア:1280x180"
-      },
-      "3d": {
-        "title": "3エリア（フルトップ）、左側にメインエリア（設定で有効）",
-        "desc": "メインエリア:960x540, 側エリア:320x540, バナーエリア:1280x180"
-      },
-      "4a": {
-        "title": "3エリア (full side)、メインエリアは右側（設定にONする）",
-        "desc": "メインエリア:960x540, 側エリア:320x720, 下エリア:960x180"
-      },
-      "4b": {
-        "title": "3エリア (full side)、メインエリアは左側（設定にONする）",
-        "desc": "メインエリア:960x540, 側エリア:320x720, 下エリア:960x180"
-      },
-      "4c": {
-        "title": " 3エリア (full side)、メインエリアは右側（設定にONする）",
-        "desc": "メインエリア:960x540, 側エリア:320x720, バナーエリア:960x180"
-      },
-      "4d": {
-        "title": " 3エリア (full side)、メインエリアは左側（設定にONする）",
-        "desc": "メインエリア:960x540, 側エリア:320x720, バナーエリア:960x180"
-      },
-      "2ap": {
-        "title": " 1エリアのポートレートモード、時計回り",
-        "desc": "メインエリア:720x1280"
-      },
-      "2bp": {
-        "title": "2エリアのポートレートモード、時計回り",
-        "desc": "側エリア:720x540,下エリア:720x740"
-      },
-      "2ap270": {
-        "title": " 1エリアのポートレートモード、反時計回り",
-        "desc": "メインエリア: 720x1280"
-      },
-      "2bp270": {
-        "title": " 2エリアのポートレートモード、反時計回り",
-        "desc": "上エリア:720x540,下エリア:720x740"
-      },
-      "custom": {
-        "title": "ランドスケープモードのカスタムレイアウト",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content "
-      },
-      "customp": {
-        "title": "ポートレートモードのカスタムレイアウト、時計回り",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content "
-      },
-      "customp270": {
-        "title": "ポートレートモードのカスタムレイアウト、反時計回り",
-        "desc": "Upload custom_layout.html under Assets Tab(otherwise this option is disabled), Use #main,#side, #bottom, #ticker html ID tags for content "
-      }
-    },
-    "validityCal": {
-      "desc": "画面に表示するコンテンツの有効期限を追加する"
     }
   },
   "Placeholder": {
@@ -761,55 +259,25 @@
     "password": "パスワードを入力してください。",
     "rePassword": "新しいスワードを入力してください。",
     "oldPassword": "現在パスワードを入力してください。",
-    "inputMessage": "メッセージを入力してください。",
     "newPassword": "新しいパスワードを入力してください。",
-    "entervalue": "ここに入力してください。",
-    "enterValueSeconds": "秒数を入力してください。",
     "longitude": "経度",
     "latitude": "緯度",
     "price": "価格",
     "discount": "割引率",
-    "starttime": "開始時間",
-    "endtime": "終了時間",
+    "startTime": "開始時間",
+    "endTime": "終了時間",
     "user": {
-      "name": "ユーザー名",
-      "ggID": "GoogleのIDを入力してください。"
-    },
-    "companies": {
-      "address": "会社の住所"
-    },
-    "add": {
-      "group": "新しい再生グループを入力してください。",
-      "playlist": "再生リスト追加",
-      "tag": "ラベル追加"
-    },
-    "addTicker": {
-      "enterMes": "メッセージを入力してください。",
-      "enterRSS": "RSSリンクを入力してください。"
-    },
-    "playlist": {
-      "times": "回",
-      "addPlaylist": "再生リストを追加してください。",
-      "playlistName": "再生リスト",
-      "group": "再生グループ"
-    },
-    "addData": {
-      "saveFileInFolder": "データはこのファイルに保存されます。",
-      "durationFeedItem": "時間を入力してください。",
-      "blankforNo_zoom": "ズームしない場合は空白のままにしてください。"
-    },
-    "chooseFile": "Assetsからcustom_layout * .htmlファイルを選択する"
+      "name": "ユーザー名"
+    }
   },
   "Table": {
     "No": "No",
     "action": "操作",
     "address": "住所",
     "ipAddress": "IPアドレス",
-    "agency": "パートナー",
     "amount": "金額",
     "area": "アリア",
     "code": "コード",
-    "company": "会社名",
     "customer": "顧客",
     "capacity": "収納サイズ",
     "createdAt": "作成日",
@@ -820,7 +288,6 @@
     "time": "時間",
     "detail": "詳細情報",
     "duration": "時間 (秒)",
-    "airtime": "再生時間　(秒)",
     "uptime": "動作時間",
     "discount": "割引率 %",
     "tagName": "Tags名",
@@ -840,28 +307,11 @@
     "size": "サイズ",
     "type": "種類",
     "thumbnail": "サムネイル",
-    "tags": "ラベル",
-    "statistical": "統計",
-    "validityTime": "有効期限",
-    "group": "再生グループ",
     "areas": {
       "name": "エリア名"
     },
     "companies": {
       "name": "会社名"
-    },
-    "assets": {
-      "name": "コンテンツ",
-      "times": "再生回数"
-    },
-    "devices": {
-      "code": "デバイスコード",
-      "name": "デバイス名",
-      "group": "デバイスのグループ",
-      "currentPlaylist": "再生中内容"
-    },
-    "playlists": {
-      "name": "再生リスト"
     },
     "subscription": "プラン",
     "subscriptions": {
@@ -875,41 +325,20 @@
     "unlockAccount": "'{{subject}}'アカウントを有効にしますがよろしいでしょうか。",
     "restoreAccount": "'{{subject}}'のアカウントを復元しますがよろしいでしょうか。",
     "edit": {
-      "assets": "ファイル名を変更または削除する。完了したら、「完了」をクリックする。"
+
     },
     "delete": {
       "account": "このアカウントを削除してもよろしいですか。",
       "company": "この顧客を削除してもよろしいですか。",
       "file": "このファイルを削除してもよろしいですか。",
-      "tags": "このTagsを削除してもよろしいですか。",
-      "areas": "'{{subject}}'エリアを削除してもよろしいですか。",
-      "group": "'{{subject}}'再生グループを削除してもよろしいですか。",
-      "playlist": "'{{subject}}'再生リストを削除してもよろしいですか。",
-      "oohs": "'{{subject}}'を削除してもよろしいですか。"
-    },
-    "playlist": {
-      "change": "再生グループは'{{subject}}'に変更してもよろしいですか。"
-    },
-    "devices": {
-      "reboot": "デバイスを再起動してもよろしいですか。",
-      "Sigusr2": "デバイスにcommand Sigusr2を送信してもよろしいですか。",
-      "changeCustomer": "デバイスに顧客を変更してもよろしいですか。",
-      "cancel": "デバイスの登録を解除してもよろしいですか。",
-      "changeArea": "デバイスのエリアを変更してもよろしいですか。"
+      "areas": "'{{subject}}'エリアを削除してもよろしいですか。"
     }
   },
   "Notification": {
-    "noAssets": "データがありません。\n コンテンツを追加するため、「追加」をクリックします。\n 再生リストにコンテンツを追加するため、「コンテンツを追加」をクリックします。",
-    "noContents": "データがありません。",
-    "noData": "表示内容がありません。ここにコンテンツをドラッグ＆ドロップしてください。",
-    "noPlaylist": "再生リストがありません。",
-    "noDevices": "デバイスがありません。",
-    "maxGroupPlaylist": "再生リストの最大数は３０です。"
+
   },
   "Message": {
-    "descDefaultGroup": "スケジュールによる再生リストがない場合、デフォルトの再生リストが再生されます。",
     "pleaseWait": "しばらくおまちください",
-    "sendRequest": "リクエストが送信されました。10秒後にページをリロードしてください。",
     "convert": "形式を変換する必要であれば、コンテンツリストに表示されるまで数分かかります。",
     "inputTime": {
       "start": "開始時間を入力してください",
@@ -919,51 +348,17 @@
     "file": {
       "exist": "ファイル名が既に存在します"
     },
-    "playlist": {
-      "notExist": "再生グループが存在していません",
-      "notfound": "再生グループが見つかりません。"
-    },
-    "snapshoot": {
-      "captured": "スクリーンショットを撮りました",
-      "capturing": "スクリーンショットを撮っています",
-      "previousShoot": "デバイスがオフラインなのです、直近のスクリーンショットを送信します",
-      "cannotCapture": "スクリーンショットを撮れません",
-      "stopCapture": "スクリーンショットの指示をキャンセルしました",
-      "timeout": "デバイスから応答を受信できません。デバイスがオンラインであることを確認して、もう一度お試しください。",
-      "shellResult": "Shellコマンド実行結果"
-    },
     "error": {
       "upload": "アップロードができませんでした",
       "process": "正常に処理できませんでした",
       "occur": "エラーを発生しました",
       "login": "アカウントまたはパスワードが間違っています。",
       "permission": "あなたはアクセス権限を持っていません。",
-      "deploy": "展開に失敗しました。",
-      "offlineFW": "現在、デバイスがオフラインしていますので、ファームウェアを更新できません。",
-      "offlineDevice": "デバイスがオフラインしていますので、表示画面を確認できません。",
-      "inputData": "入力データにエラーが発生しました。",
-      "shell": "Shellのコマンドを入力してください",
-      "change": "変更できません。",
-      "streaming": "デバイスはストリーミングしています。",
-      "notUploadFw": "ファームウェアをアップロードできませんでした。ファイルのタイプはアプリケーション/gzipではありません。"
+      "inputData": "入力データにエラーが発生しました。"
     },
     "success": {
-      "deploy": "成功",
-      "sentRequest": "展開されました。リクエストが全てのデバイスに送信されました。",
       "save": "保存完了",
-      "editDevices": "デバイスの情報を更新しました。",
-      "reboot": "再起動コマンドが送信されました",
-      "sigusr2": "cmd sigusr2コマンドが送信されました",
       "upload": "アップロード完了"
-    },
-    "area": {
-      "delete": "エリアを削除してもよろしいですか。"
-    },
-    "oohs": {
-      "delete": "OOHを削除してもよろしいですか。"
-    },
-    "tags": {
-      "exist": "Tagが既に存在しています。"
     }
   },
   "Validate": {
