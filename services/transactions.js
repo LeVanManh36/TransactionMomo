@@ -12,7 +12,6 @@ module.exports = {
   auth {user: 'email liên kết momo', pass: 'pass của email not momo'}
  */
 function loadData(auth) {
-  console.log('====================== start:', new Date())
   let client = getClient(auth);
   return new Promise((resolve, reject) => {
     getMessages(client)
@@ -57,10 +56,7 @@ function loadData(auth) {
           },
           (err => {
             if (err) errors.push(err.message || err);
-            console.log('111111111111111111111', errors)
             if (errors.length) return reject(errors)
-            console.log('2222222222222222222222', data)
-            console.log('====================== start:', new Date())
             return resolve(data)
           })
         )
@@ -87,9 +83,9 @@ function getMessages(client) {
       console.log("Successfully connected to server");
       client.openMailbox("INBOX", (error, info) => {
         if (error) reject(error);
-        console.log("Message count in INBOX: " + info.count);
+        console.log("Message count in INBOX: ", info.count);
         if (info.count > 0) {
-          client.listMessages(-10, (err, messages) => {
+          client.listMessages(-info.count, (err, messages) => {
             if (err) reject(err);
             messages.map(message => {
               if (message.from.address === "no-reply@momo.vn") {
