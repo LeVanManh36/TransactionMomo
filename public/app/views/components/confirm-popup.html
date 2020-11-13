@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <button ng-click="cancel()" class="close">&times;</button>
+    <h3 class="text-danger">{{ msgObj.title | translate }}</h3>
+</div>
+<div class="modal-body">
+    <h5 ng-if="noPrepend">
+        <b ng-if="!msgObj.text">
+            {{ (msgObj.confirmText || 'Popup.confirm.delete') | translate:msgObj.replacement }}
+        </b>
+
+        <b ng-if="msgObj.text">
+            {{ msgObj.text | translate }}
+        </b>
+    </h5>
+
+    <h5 ng-if="!noPrepend">
+        <span>{{ 'Popup.confirm.delete' | translate }}</span> <b>{{ msgObj.text | translate }}</b>?
+    </h5>
+</div>
+<div class="modal-footer">
+    <button ng-click="cancel()" class="btn">{{ 'Button.cancel' | translate }}</button>
+    <button ng-click="ok()" class="btn btn-danger">{{ 'Button.ok' | translate }}</button>
+</div>

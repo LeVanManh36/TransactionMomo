@@ -1,0 +1,88 @@
+syntax = 'proto3';
+
+message Empty {}
+message Subject {
+    string _id = 1;
+    string name = 2;
+    string localName = 3;
+    string cpuSerialNumber = 4;
+    string myIpAddress = 5;
+    string ip = 6;
+    string lng = 7;
+    string lat = 8;
+    string link = 9;
+    Package packages = 10;
+    Discount discount = 11;
+    Area area = 12;
+    SettingPowerTime settingPowerTime = 13;
+    repeated Calendar calendars = 14;
+}
+message Discount {
+    string default = 1;
+    string startDate = 2;
+    string endDate = 3;
+    string value = 4;
+}
+message Package {
+    string name = 1;
+    string price = 2;
+}
+message Area {
+    string _id = 1;
+    string name = 2;
+    string lng = 3;
+    string lat = 4;
+}
+message SettingPowerTime {
+    string start = 1;
+    string end = 2;
+    string times = 3;
+}
+message Calendar {
+    string startDate = 1;
+    string endDate = 2;
+    string times = 3;
+    string contract = 4;
+}
+
+message TimeStamp {
+    string when = 1;
+    ByUser by = 2;
+}
+message ByUser {
+    string _id = 1;
+    string name = 2;
+    string email = 3;
+}
+message Request {
+    string options = 1;
+    string methodName = 2;
+}
+message Response {
+    int32 code = 1;
+    string message = 2;
+    string data = 3;
+}
+message Result {
+    string msg = 1;
+}
+message Filter {
+    string options = 1;
+}
+message List {
+    int32 code = 1;
+    string message = 2;
+    Pagination data = 3;
+}
+message Pagination {
+    int32 skip = 1;
+    int32 limit = 2;
+    int32 count = 3;
+    int32 total = 4;
+    repeated Subject list_data = 5;
+}
+
+service PlayerService {
+    rpc List (Filter) returns (List) {}
+    rpc Fetch (Request) returns (Response) {}
+}

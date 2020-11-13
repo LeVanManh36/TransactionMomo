@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h3 class="text-warning">
+        <span ng-if="titleExport">{{ titleExport | translate }}</span>
+        <span ng-if="!titleExport">{{ 'Breadcrumb.export.byCalendar' | translate }}</span>
+        <a ng-click="exportFile.closeModal()" class="pull-right close">×</a>
+    </h3>
+</div>
+
+<div class="modal-body">
+    <form role="form" name="formExport">
+
+        <div class="form-group row">
+            <label class="control-label col-sm-4">{{ 'Label.startTime' | translate }}</label>
+            <div class="col-sm-8">
+                <input ng-model="exportParams.start" type="date" class="form-control"
+                       ng-change="exportFile.changeValue()"
+                />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-4">{{ 'Label.endTime' | translate }}</label>
+            <div class="col-sm-8">
+                <input ng-model="exportParams.end" type="date" class="form-control"
+                       ng-change="exportFile.changeValue()"
+                />
+            </div>
+        </div>
+
+        <div ng-if="isHistory" class="form-group row">
+            <label class="control-label col-sm-4">{{ 'Label.assets.name' | translate }}</label>
+            <div class="col-sm-8">
+                <select ng-model="exportParams.filename" required="required" class="form-control"
+                        ng-options="item for item in contentNames | orderBy:'toString()'">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-if="isTrackingPage" class="form-group row">
+            <label class="control-label col-sm-4">{{ 'Label.group' | translate }}</label>
+            <div class="col-sm-8">
+                <select ng-model="exportParams.group" required="required" class="form-control"
+                        ng-options="group._id as group.name for group in groups | orderBy:'name'">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row" ng-if="exportParams.errorMsg">
+            <label class="control-label col-sm-12 text-danger">
+                {{ exportParams.errorMsg | translate }}
+            </label>
+        </div>
+
+    </form>
+</div>
+
+<div class="modal-footer">
+    <div class="pull-right">
+        <button ng-click="exportFile.excel()" class="btn btn-success btn-sm">
+            <i class="fa fa-file-excel-o"></i> {{ 'Button.exports.excel' | translate }}
+        </button>
+    </div>
+</div>

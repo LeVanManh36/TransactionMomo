@@ -1,0 +1,6 @@
+{
+  "staff": "staff",
+  "customer": "customer",
+  "viewer": "viewer",
+  "owner": "owner"
+}

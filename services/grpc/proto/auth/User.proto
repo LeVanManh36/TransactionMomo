@@ -1,0 +1,52 @@
+syntax = 'proto3';
+
+message Empty {}
+message Subject {
+    string _id = 1;
+    string email = 2;
+    string name = 3;
+    string role = 4;
+    string address = 5;
+    string phone = 6;
+    string company = 7;
+    // string agency = 8;
+    // string customer = 9;
+    TimeStamp insert = 10;
+    TimeStamp update = 11;
+    // TimeStamp delete = 12;
+}
+message TimeStamp {
+    string when = 1;
+}
+message Request {
+    string options = 1;
+    string methodName = 2;
+}
+message Response {
+    int32 code = 1;
+    string message = 2;
+    string data = 3;
+}
+message Result {
+    string msg = 1;
+}
+message Filter {
+    string options = 1;
+}
+message List {
+    int32 code = 1;
+    string message = 2;
+    Pagination data = 3;
+}
+message Pagination {
+    int32 skip = 1;
+    int32 limit = 2;
+    int32 count = 3;
+    int32 total = 4;
+    repeated Subject list_data = 5;
+}
+
+service UserService {
+    rpc List (Filter) returns (List) {}
+    rpc Fetch (Request) returns (Response) {}
+}

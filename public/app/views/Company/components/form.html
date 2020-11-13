@@ -1,0 +1,192 @@
+<div class="modal-header">
+    <h3 class="{{!selectedObject ? 'text-info' : 'text-warning'}}">
+        {{ !selectedObject ? ('Breadcrumb.companies.create' | translate) : ('Breadcrumb.companies.edit' | translate) }}
+        <a ng-click="modal.close();" class="pull-right close"><i class="fa fa-times-circle"></i></a>
+    </h3>
+</div>
+
+<div ng-if="!selectedObject">
+    <form role="form" name="formCreate" ng-submit="fn.save()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.companies.name' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.name" required="required" class="form-control"
+                           placeholder="{{ 'Label.companies.name' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.companies.address' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.phone' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.phone" required="required" class="form-control"
+                           placeholder="{{ 'Label.phone' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.email' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.email" required="required" class="form-control"
+                           placeholder="{{ 'Label.email' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.capacity' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="number" ng-model="newObject.storageConfig.capacity"
+                           required="required" min='0' max="1000000"
+                           class="form-control" placeholder="{{ 'Label.capacity' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.description' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.description" class="form-control"
+                           placeholder="{{ 'Label.description' | translate }}"/>
+                </div>
+            </div>
+
+            <hr>
+            <div class="form-group row">
+                <label class="control-label col-sm-4 col-xs-4">{{ 'Common.extension' | translate }}</label>
+                <div class="col-sm-8 col-xs-8">
+                    <div class="checkbox-inline">
+                        <label class="small">
+                            <input type="checkbox" name="enableTracking" ng-model="newObject.enableTracking"/>
+                            {{ 'Sidebar.devices.tracking' | translate }}
+                        </label>
+                    </div>
+                    <br>
+                    <div class="checkbox-inline">
+                        <label class="small">
+                            <input type="checkbox" name="enableLog" ng-model="newObject.enableLog"/>
+                            {{ 'Sidebar.histories' | translate }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>
+
+<div ng-if="selectedObject">
+    <form role="form" name="formEdit" ng-submit="fn.update()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.companies.name' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.name" required="required" class="form-control"
+                           placeholder="{{ 'Label.companies.name' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.companies.address' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.phone' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.phone" required="required" class="form-control"
+                           placeholder="{{ 'Label.phone' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.email' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.email" required="required" class="form-control"
+                           placeholder="{{ 'Label.email' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.capacity' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="number" ng-model="newObject.storageConfig.capacity"
+                           required="required" min='0' max="1000000"
+                           class="form-control" placeholder="{{ 'Label.capacity' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.description' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.description" class="form-control"
+                           placeholder="{{ 'Label.description' | translate }}"/>
+                </div>
+            </div>
+
+            <hr>
+            <div class="form-group row">
+                <label class="control-label col-sm-4 col-xs-4">{{ 'Common.extension' | translate }}</label>
+                <div class="col-sm-8 col-xs-8">
+                    <div class="checkbox-inline">
+                        <label class="small">
+                            <input type="checkbox" name="enableTracking" ng-model="newObject.enableTracking"/>
+                            {{ 'Sidebar.devices.tracking' | translate }}
+                        </label>
+                    </div>
+                    <br>
+                    <div class="checkbox-inline">
+                        <label class="small">
+                            <input type="checkbox" name="enableLog" ng-model="newObject.enableLog"/>
+                            {{ 'Sidebar.histories' | translate }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,77 @@
+<div class="row height100 overflow-auto">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ 'Breadcrumb.settings' | translate }}</h3>
+        </div>
+
+        <div class="panel-body">
+            <form role="form" name="settingsForm" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">{{ 'Label.settings.receivedNotifyMail' | translate }}</label>
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                            <input type="text" name="receivedNotifyMail" ng-model="settings.receivedNotifyMail"
+                                   required="" class="form-control"/>
+                            <span class="input-group-btn">
+                                <a type="button" class="btn btn-success"
+                                   ng-click="saveSettings()"
+                                   ng-disabled="!settingsForm.receivedNotifyMail.$dirty"
+                                >
+                                    {{'Button.save' | translate }}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">{{ 'Label.settings.duration' | translate }}</label>
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                            <input type="text" name="duration" ng-model="settings.defaultDuration" required=""
+                                   class="form-control"/>
+                            <span class="input-group-btn">
+                                <a type="button" class="btn btn-success"
+                                   ng-click="saveSettings()"
+                                   ng-disabled="!settingsForm.duration.$dirty"
+                                >
+                                    {{'Button.save' | translate }}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label class="col-xs-8 col-xs-offset-4">
+                            <input type="checkbox" name="forcetvon" ng-model="settings.forceTvOn"
+                                   ng-click="saveSettings()"/>
+                            <span>{{ 'Label.settings.forcetvon' | translate }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label class="col-xs-8 col-xs-offset-4">
+                            <input type="checkbox" name="systemshow" ng-model="settings.systemMessagesHide"
+                                   ng-click="saveSettings()"/>
+                            <span>{{ 'Label.settings.systemshow' | translate }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label class="col-xs-8 col-xs-offset-4">
+                            <input type="checkbox" name="hidenotice" ng-model="settings.hideWelcomeNotice"
+                                   ng-change="saveSettings()"/>
+                            <span>{{ 'Label.settings.hidenotice' | translate }}</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

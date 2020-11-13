@@ -1,0 +1,76 @@
+<div class="row height100 overflow-auto">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title flex-content">
+                <span class="flex-item-vertial">{{ 'Breadcrumb.accounts.list' | translate }}</span>
+            </h3>
+        </div>
+
+        <div class="panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Table.No' | translate" class="td_center">
+                        <small class="text-info truncate">{{$index + 1}}</small>
+                    </td>
+                    <td data-title="'Table.username' | translate" sortable="'name'" filter="{name: 'text'}">
+                        <small class="text-body truncate">{{row.name}}</small>
+                    </td>
+                    <td data-title="'Table.email' | translate" sortable="'email'" filter="{email: 'text'}">
+                        <small class="text-primary truncate">{{row.email}}</small>
+                    </td>
+                    <!-- <td data-title="'Table.phone' | translate" sortable="'phone'" filter="{phone: 'text'}">
+                        <small class="text-primary truncate">{{row.phone}}</small>
+                    </td> -->
+                    <td data-title="'Table.company' | translate" sortable="'company.name'"
+                        filter="{'company.name': 'text'}">
+                        <small class="text-body truncate">
+                            {{row.company ? row.company.name : ''}}
+                        </small>
+                    </td>
+                    <td data-title="'Table.role' | translate" sortable="'role'" filter="{role: 'options'}">
+                        <small class="text-primary truncate">
+                            {{roleOptions[row.role] | translate}}
+                        </small>
+                    </td>
+                    <td data-title="'Table.deletedAt' | translate" sortable="'delete.when'"
+                        filter="{'delete.when': 'daterange'}" class="td_center"
+                    >
+                        <small class="text-danger truncate">
+                            {{row.delete.when | date:dateFormatFn + ' HH:mm:ss'}}
+                        </small>
+                    </td>
+                    <td data-title="'Table.action' | translate" class="td_center" style="width: 110px">
+                        <div class="btn-group-xs" role="group">
+                            <button ng-click="$event.stopPropagation();fn.restore(row)" class="btn btn-warning">
+                                <i class="fas fa-trash-restore"></i>
+                            </button>
+
+                            <button ng-click="$event.stopPropagation();fn.delete(row)" class="btn btn-danger">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="flex-item-right">
+                {{ 'Pagination.total' | translate }} <span class="text-info">{{objects.total}} {{ 'Pagination.records' | translate }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="ng-table/filters/options.html">
+    <form class="form-inline">
+        <select ng-options="role.value as role.label | translate for role in roles"
+                class="form-control" ng-model="params.filter()['role']">
+            <option value="" selected="selected">{{ 'Common.all' | translate }}</option>
+        </select>
+    </form>
+</script>
+
+<script type="text/ng-template" id="ng-table/filters/daterange.html">
+    <form class="form-inline">
+        <input class="form-control" format="yyyy-mm-dd" type="date" ng-model="params.filter()['delete.when']"/>
+    </form>
+</script>

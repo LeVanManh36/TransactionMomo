@@ -1,0 +1,339 @@
+<div class="modal-header">
+    <h3 class="{{!selectedObject ? 'text-info' : 'text-warning'}}">
+        {{ !selectedObject ? ('Breadcrumb.oohs.create' | translate) : ('Breadcrumb.oohs.edit' | translate) }}
+        <a ng-click="modal.close()" class="pull-right close"><i class="fa fa-times-circle"></i></a>
+    </h3>
+</div>
+
+<div ng-if="!selectedObject">
+    <form role="form" name="formCreate" ng-submit="fn.save()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" required="required" class="form-control"
+                           placeholder="{{ 'Label.address' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.area' | translate }}</label>
+                <div class="col-sm-8">
+                    <select ng-model="newObject.area._id" required="required" class="form-control"
+                            ng-options="area._id as area.name for area in areas | orderBy:'name'">
+                        <option value="">--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.coordinates' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" ng-model="newObject.lat" class="form-control"
+                                   placeholder="{{ 'Label.latitude' | translate }}"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" ng-model="newObject.lng" class="form-control"
+                                   placeholder="{{ 'Label.longitude' | translate }}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.size' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.size" required="required" class="form-control"
+                           placeholder="{{ 'Label.size' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.vision' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.vision" class="form-control"
+                           placeholder="{{ 'Label.oohs.vision' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.light' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.light" class="form-control"
+                           placeholder="{{ 'Label.oohs.light' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.flow' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.flow" class="form-control"
+                           placeholder="{{ 'Label.oohs.flow' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.price' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            {{newObject.packages.name || ('Common.aMonth' | translate)}}
+                        </span>
+                        <input ng-model="newObject.packages.price" required="required" class="form-control"
+                               placeholder="{{ 'Label.price' | translate }}"/>
+                        <span class="input-group-addon">
+                            {{newObject.packages.unit || ('Common.currency' | translate)}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.discount' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="text" ng-model="newObject.discount.default" ui-number-mask="2" maxlength="5"
+                               required="required" class="form-control"
+                               placeholder="{{ 'Label.discount' | translate }}"/>
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.discountLimited' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.value' | translate }}</label>
+                        <div class="col-xs-7">
+                            <div class="input-group">
+                                <input type="text" ng-model="newObject.discount.value" ui-number-mask="2" maxlength="5"
+                                       class="form-control" placeholder="{{ 'Label.discount' | translate }}"/>
+                                <span class="input-group-addon">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.startDate' | translate }}</label>
+                        <div class="col-xs-7">
+                            <input type="text" ng-model="newObject.discount.startDate" ui-date-mask="DD-MM-YYYY"
+                                   class="form-control" placeholder="DD-MM-YYYY"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.endDate' | translate }}</label>
+                        <div class="col-xs-7">
+                            <input type="text" ng-model="newObject.discount.endDate" ui-date-mask="DD-MM-YYYY"
+                                   class="form-control" placeholder="DD-MM-YYYY"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.referralLink' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.link" class="form-control"
+                           placeholder="{{ 'Label.referralLink' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.description' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.description" class="form-control"
+                           placeholder="{{ 'Label.description' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>
+
+<div ng-if="selectedObject">
+    <form role="form" name="formEdit" ng-submit="fn.update()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" required="required" class="form-control"
+                           placeholder="{{ 'Label.address' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.area' | translate }}</label>
+                <div class="col-sm-8">
+                    <select ng-model="newObject.area._id" required="required" class="form-control"
+                            ng-options="area._id as area.name for area in areas | orderBy:'name'">
+                        <option value="">--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.coordinates' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" ng-model="newObject.lat" class="form-control"
+                                   placeholder="{{ 'Label.latitude' | translate }}"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" ng-model="newObject.lng" class="form-control"
+                                   placeholder="{{ 'Label.longitude' | translate }}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.size' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.size" required="required" class="form-control"
+                           placeholder="{{ 'Label.size' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.vision' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.vision" class="form-control"
+                           placeholder="{{ 'Label.oohs.vision' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.light' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.light" class="form-control"
+                           placeholder="{{ 'Label.oohs.light' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.oohs.flow' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.flow" class="form-control"
+                           placeholder="{{ 'Label.oohs.flow' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.price' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            {{newObject.packages.name || ('Common.aMonth' | translate)}}
+                        </span>
+                        <input ng-model="newObject.packages.price" required="required" class="form-control"
+                               placeholder="{{ 'Label.price' | translate }}"/>
+                        <span class="input-group-addon">
+                            {{newObject.packages.unit || ('Common.currency' | translate)}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.discount' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="text" ng-model="newObject.discount.default" ui-number-mask="2" maxlength="5"
+                               required="required" class="form-control"
+                               placeholder="{{ 'Label.discount' | translate }}"/>
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.discountLimited' | translate }}</label>
+                <div class="col-sm-8">
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.value' | translate }}</label>
+                        <div class="col-xs-7">
+                            <div class="input-group">
+                                <input type="text" ng-model="newObject.discount.value" ui-number-mask="2" maxlength="5"
+                                       class="form-control" placeholder="{{ 'Label.discount' | translate }}"/>
+                                <span class="input-group-addon">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.startDate' | translate }}</label>
+                        <div class="col-xs-7">
+                            <input type="text" ng-model="newObject.discount.startDate" ui-date-mask="DD-MM-YYYY"
+                                   class="form-control" placeholder="DD-MM-YYYY"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">{{ 'Label.endDate' | translate }}</label>
+                        <div class="col-xs-7">
+                            <input type="text" ng-model="newObject.discount.endDate" ui-date-mask="DD-MM-YYYY"
+                                   class="form-control" placeholder="DD-MM-YYYY"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.referralLink' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.link" class="form-control"
+                           placeholder="{{ 'Label.referralLink' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.description' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.description" class="form-control"
+                           placeholder="{{ 'Label.description' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>

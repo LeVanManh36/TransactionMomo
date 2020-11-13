@@ -1,0 +1,267 @@
+<div style="margin-bottom: 0" class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="text-center" style="color:white"> {{ 'Label.selectBackground' | translate }}
+            <a ng-click="modal.close()" class="pull-right close">×</a>
+        </h4>
+    </div>
+
+    <div class="panel-body">
+        <tabset>
+            <tab heading="{{ 'Label.layoutDisplay.tab1' | translate }}">
+                <small>{{'Label.layoutDisplay.descriptiontab1' | translate }}</small>
+
+                <ul class="list-group">
+                    <li ng-repeat="(layout,item) in layouts"
+                        ng-class="{'list-group-item-success':plData.layout == layout}"
+                        class="list-group-item"
+                    >
+                        <div class="row">
+                            <div dropdown="dropdown" class="col-sm-10 dropdown">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" value="{{layout}}"
+                                               ng-change="saveLayout()"
+                                               ng-disabled="item.disabled"
+                                               ng-model="plData.layout"
+                                        />
+                                        <strong class="text-primary">
+                                            {{layout}}: {{ item.title | translate }}
+                                        </strong>
+                                        <p>
+                                            <small>({{ item.description | translate }})</small>
+                                        </p>
+                                    </label>
+                                </div>
+
+                                <button dropdown-toggle="dropdown-toggle" class="btn btn-sm btn-link dropdown-toggle"
+                                        ng-if="layout.indexOf('custom') === 0"
+                                >
+                                    <small class="text-muted">{{ 'Label.typeLayout' | translate }} :&nbsp;</small>
+                                    <small>
+                                        {{ plData.templateName || ('Placeholder.chooseFile' | translate ) }}
+                                    </small>
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+
+                                <ul role="menu" ng-if="layout.indexOf('custom') === 0" class="dropdown-menu">
+                                    <li ng-repeat="asset in layoutTemplates">
+                                        <a ng-click="selectTemplate(asset,layout)">
+                                            {{asset}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <img height="40px" ng-src="/app/img/{{layout}}.png"/>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </tab>
+
+            <tab heading="{{ 'Label.layoutDisplay.tab2' | translate}}">
+                <small>{{'Label.layoutDisplay.descriptiontab2' | translate }}</small>
+
+                <form name="layoutform">
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.width' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="videoWindow.length" required="" class="form-control"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.heigh' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="videoWindow.width" required="" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.leftOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="videoWindow.xoffset" required="" class="form-control"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.topOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="videoWindow.yoffset" required="" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 checkbox">
+                            <label>
+                                <input type="checkbox" name="fullscreen_checkbox"
+                                       ng-model="videoWindow.mainzoneOnly" ng-true-value="false"
+                                       ng-false-value="true" ng-checked="videoWindow.mainzoneOnly !== true"
+                                />
+                                <small class="text-muted pl-5">
+                                    {{ 'Label.layoutDisplay.useFullscreen' | translate }}
+                                </small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 btn-toolbar btn-group-md">
+                            <button ng-click="setVideoWindow(null)" class="btn btn-danger">
+                                {{'Button.restoreDefault'| translate }}
+                            </button>
+
+                            <button ng-click="setVideoWindow(videoWindow)"
+                                    ng-disabled="!layoutform.$valid" class="btn btn-info"
+                            >
+                                {{'Button.saveChange'| translate }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </tab>
+
+            <tab heading="{{ 'Label.layoutDisplay.tab3' | translate}}">
+                <h4>{{'Label.layoutDisplay.editLayout' | translate }}</h4>
+                <small> {{'Label.layoutDisplay.descriptiontab3' | translate }}</small>
+
+                <form name="sideZoneForm">
+                    <div class="alert alert-info text-center">
+                        {{'Label.sideAreaValue' | translate }}
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.width' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.side.length" required="" class="form-control"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.heigh' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.side.width" required="" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.leftOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.side.xoffset" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.topOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.side.yoffset" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 btn-toolbar btn-group-md">
+                            <button ng-click="setZoneVideoWindow('side',null)" class="btn btn-danger">
+                                {{'Button.restoreSideArea' | translate }}
+                            </button>
+
+                            <button ng-click="setZoneVideoWindow('side',zoneVideoWindow.side)"
+                                    ng-disabled="!sideZoneForm.$valid" class="btn btn-info"
+                            >
+                                {{ 'Button.saveChange' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                    <hr/>
+                </form>
+
+                <form name="bottomZoneForm">
+                    <div class="alert alert-info text-center">{{'Label.underAreaValue' | translate }}</div>
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.width' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.bottom.length" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.heigh' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.bottom.width" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.leftOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.bottom.xoffset" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="control-label">
+                                <small>{{'Label.layoutDisplay.topOffset' | translate }}:</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" ng-model="zoneVideoWindow.bottom.yoffset" required=""
+                                   class="form-control"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 btn-toolbar btn-group-md">
+                            <button ng-click="setZoneVideoWindow('bottom',null)" class="btn btn-danger">
+                                {{'Button.restoreUnderArea' | translate }}
+                            </button>
+
+                            <button ng-click="setZoneVideoWindow('bottom',zoneVideoWindow.bottom)"
+                                    ng-disabled="!bottomZoneForm.$valid" class="btn btn-info"
+                            >
+                                {{'Button.saveChange'| translate }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </tab>
+        </tabset>
+    </div>
+</div>

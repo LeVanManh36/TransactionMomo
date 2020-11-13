@@ -1,0 +1,2 @@
+//*** starting...//
+require('./server')

@@ -1,0 +1,64 @@
+<div class="row height100 overflow-auto">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title flex-content">
+                <span class="flex-item-vertial">{{ 'Breadcrumb.oohs.list' | translate }}</span>
+                <div class="btn-toolbar btn-group-sm flex-item-right">
+                    <a ng-click="fn.add()" class="btn btn-primary">
+                        <em><i class="fa fa-plus"></i> {{ 'Button.add.ooh' | translate }}</em>
+                    </a>
+                </div>
+            </h3>
+        </div>
+
+        <div class="panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Table.No' | translate" class="td_center">
+                        <small class="text-info truncate">{{$index + 1}}</small>
+                    </td>
+                    <td data-title="'Table.address' | translate" sortable="'address'" filter="{address: 'text'}">
+                        <small class="text-body truncate">{{row.address}}</small>
+                    </td>
+                    <td data-title="'Table.area' | translate" sortable="'area.name'" filter="{'area.name': 'text'}">
+                        <small class="text-body truncate">{{row.area.name}}</small>
+                    </td>
+                    <td data-title="'Table.price' | translate" sortable="'packages.price'" filter="{'packages.price': 'text'}">
+                        <small class="text-body truncate">
+                            {{row.packages.price}} VNĐ / {{row.packages.name | translate}}
+                        </small>
+                    </td>
+                    <td data-title="'Table.discount' | translate" sortable="'discount.default'" filter="{'discount.default': 'text'}">
+                        <small class="text-body truncate">{{row.discount.default || 0}} </small>
+                    </td>
+                    <td data-title="'Table.createdAt' | translate" sortable="'insert.when'"
+                        filter="{'insert.when': 'daterange'}" class="td_center"
+                    >
+                        <small class="text-danger truncate">{{row.insert.when | date:'dd - MM - yyyy'}}</small>
+                    </td>
+                    <td data-title="'Table.action' | translate" class="td_center" style="width: 110px">
+                        <div class="btn-group-xs" role="group">
+                            <button ng-click="$event.stopPropagation();fn.edit(row)" class="btn btn-warning">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                            <button ng-click="$event.stopPropagation();fn.delete(row)" class="btn btn-danger">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="flex-item-right">
+                {{ 'Pagination.total' | translate }} <span class="text-info">{{objects.total}} {{ 'Pagination.records' | translate }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="ng-table/filters/daterange.html">
+    <form class="form-inline">
+        <input class="form-control" format="yyyy-mm-dd" type="date" ng-model="params.filter()['insert.when']" />
+    </form>
+</script>

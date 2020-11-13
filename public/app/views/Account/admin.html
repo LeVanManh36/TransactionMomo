@@ -1,0 +1,49 @@
+<div class="row height100 overflow-auto">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title flex-content">
+                <span class="flex-item-vertial">{{ 'Breadcrumb.accounts.list' | translate }}</span>
+                <div class="btn-toolbar btn-group-sm flex-item-right">
+                    <a ng-click="fn.add()" class="btn btn-primary">
+                        <em><i class="fa fa-plus"></i> {{ 'Button.add.account' | translate }}</em>
+                    </a>
+                </div>
+            </h3>
+        </div>
+
+        <div class="panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Table.No' | translate" class="td_center">
+                        <small class="text-info truncate">{{$index + 1}}</small>
+                    </td>
+                    <td data-title="'Table.username' | translate" sortable="'name'" filter="{name: 'text'}">
+                        <small class="text-body truncate">{{row.name}}</small>
+                    </td>
+                    <td data-title="'Table.address' | translate" sortable="'address'" filter="{address: 'text'}">
+                        <small class="text-body truncate">{{row.address}}</small>
+                    </td>
+                    <td data-title="'Table.email' | translate" sortable="'email'" filter="{email: 'text'}">
+                        <small class="text-primary truncate">{{row.email}}</small>
+                    </td>
+                    <td data-title="'Table.phone' | translate" sortable="'phone'" filter="{phone: 'text'}">
+                        <small class="text-primary truncate">{{row.phone}}</small>
+                    </td>
+                    <td data-title="'Table.action' | translate" class="td_center">
+                        <button ng-click="$event.stopPropagation();fn.edit(row)" class="btn btn-sm btn-warning">
+                            <i class="fa fa-edit"></i> {{ 'Button.edit' | translate }}
+                        </button>
+
+                        <button ng-click="$event.stopPropagation();fn.delete(row)" class="btn btn-sm btn-danger">
+                            <i class="fa fa-times-circle"></i> {{ 'Button.delete' | translate }}
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="flex-item-right">
+                {{ 'Pagination.total' | translate }} <span class="text-info">{{objects.total}} {{ 'Pagination.records' | translate }}</span>
+            </div>
+        </div>
+    </div>
+</div>

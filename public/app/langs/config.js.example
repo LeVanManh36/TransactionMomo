@@ -1,0 +1,27 @@
+const langs = {
+  default: 'vi',
+  timeAgo: {
+    vi: "vn_VN",
+    en: "en_US",
+    ja: "ja_JP"
+  },
+  dateFormat: {
+    vi: "dd/MM/yyyy",
+    en: "yyyy/MM/dd",
+    ja: "MM/dd/yyyy",
+  },
+  translations: {
+    vi: {
+      content: 'Vietnamese',
+      app_name: "MLB-Hệ thống quản lý giao dịch MoMo"
+    },
+    en: {
+      content: 'English',
+      app_name: "MLB-Hệ thống quản lý giao dịch MoMo"
+    },
+    ja: {
+      content: 'Japanese',
+      app_name: "MLB-Hệ thống quản lý giao dịch MoMo"
+    }
+  }
+}
