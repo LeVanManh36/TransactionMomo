@@ -9,7 +9,9 @@ const ctrlUser = require('../app/Controllers/UserController');
 const ctrlUserDisabled = require('../app/Controllers/UserDisabledController');
 const ctrlProfile = require('../app/Controllers/ProfileController');
 const ctrlArea = require('../app/Controllers/AreaController');
-// const ctrlTest = require('../app/Controllers/TestController');
+const ctrlCard = require('../app/Controllers/CardController');
+const ctrlTransaction = require('../app/Controllers/TransactionController');
+const ctrlTest = require('../app/Controllers/TestController');
 
 // Middleware
 const middleware = require('../app/Middleware');
@@ -38,7 +40,7 @@ module.exports = (app) => {
 
     // Routes test
     router.group('/api/test', (router) => {
-
+      router.get('/transactions', ctrlTest.test);
     })
   })
 
@@ -53,6 +55,10 @@ module.exports = (app) => {
     router.get('/profile', ctrlProfile.getProfile);
     // Route areas
     router.get('/areas', ctrlArea.index);
+    // Route cards
+    router.get('/cards', ctrlCard.index);
+    // Route transactions
+    router.get('/transactions', ctrlTransaction.index);
 
     // TODO Routes roles = [roles.root, roles.admin]
     router.group({middlewares: [middleware.role(roles.root, roles.admin)]}, (router) => {
@@ -98,6 +104,15 @@ module.exports = (app) => {
       router.put('/areas/:areaId', ctrlArea.update);
       router.delete('/areas/:areaId', ctrlArea.destroy);
       router.post('/areas/deleteMulti', ctrlArea.deleteMulti);
+
+      // Route cards
+      // router.get('/cards', ctrlCard.index);
+      router.post('/cards', ctrlCard.store);
+      router.param('cardId', ctrlCard.load);
+      router.get('/cards/:cardId', ctrlCard.detail);
+      router.put('/cards/:cardId', ctrlCard.update);
+      router.delete('/cards/:cardId', ctrlCard.destroy);
+      router.post('/cards/deleteMulti', ctrlCard.deleteMulti);
     });
   });
 
