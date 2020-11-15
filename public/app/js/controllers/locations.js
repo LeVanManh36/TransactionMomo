@@ -2,7 +2,7 @@
 
 angular.module('controllers.locations', [])
   .controller('AreaCtrl',
-    function ($scope, piUrls, $modal, piPopup, dataLoader, ngDataTable) {
+    function ($scope, piUrls, $modal, ngPopup, dataLoader, ngDataTable) {
 
       $scope.objects = {
         list_data: [],
@@ -74,7 +74,7 @@ angular.module('controllers.locations', [])
         },
 
         delete(obj) {
-          piPopup.confirm(
+          ngPopup.confirm(
             {
               confirmText: "Confirm.delete.areas",
               replacement: {subject: obj.name}
@@ -85,13 +85,13 @@ angular.module('controllers.locations', [])
                 if (!err) {
                   $scope.tableParams.reload();
 
-                  piPopup.status({
+                  ngPopup.status({
                     title: 'Breadcrumb.areas.delete',
                     msg: data.message
                   })
                 } else {
                   // console.log('Delete Area error: ', err, '-- status:', data);
-                  piPopup.status({
+                  ngPopup.status({
                     title: 'Breadcrumb.areas.delete',
                     msg: err.message
                   })
@@ -108,7 +108,7 @@ angular.module('controllers.locations', [])
               $scope.tableParams.reload();
               $scope.fn.abort();
 
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.areas.create',
                 msg: data.message
               })
@@ -126,7 +126,7 @@ angular.module('controllers.locations', [])
               $scope.tableParams.reload();
               $scope.fn.abort();
 
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.areas.edit',
                 msg: data.message
               })

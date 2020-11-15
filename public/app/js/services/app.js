@@ -144,7 +144,7 @@ angular.module('services.utils', [])
     };
   })
   
-  .factory("piPopup", ["$modal", function ($modal) {
+  .factory("ngPopup", ["$modal", function ($modal) {
     
     return {
       confirm: function (objString, cb, cbCancel) {

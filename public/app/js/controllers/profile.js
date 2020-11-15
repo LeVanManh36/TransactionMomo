@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('controllers.profiles', [])
-  .controller('ProfileCtrl', function ($scope, piUrls, piPopup, $localStorage, $location, $window, dataLoader) {
+  .controller('ProfileCtrl', function ($scope, piUrls, ngPopup, $localStorage, $location, $window, dataLoader) {
 
     $scope.object = {};
     $scope.statusMsg = null;
@@ -12,7 +12,7 @@ angular.module('controllers.profiles', [])
           .then(data => {
             $scope.fn.abort();
 
-            piPopup.status(
+            ngPopup.status(
               {
                 title: 'Breadcrumb.accounts.changePassword',
                 msg: data.message
@@ -25,7 +25,7 @@ angular.module('controllers.profiles', [])
           })
           .catch(err => {
             // $scope.statusMsg = err.message;
-            piPopup.status(
+            ngPopup.status(
               {
                 title: 'Breadcrumb.accounts.changePassword',
                 msg: err.message

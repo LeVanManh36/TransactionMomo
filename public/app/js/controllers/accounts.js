@@ -2,7 +2,7 @@
 
 angular.module('controllers.accounts', [])
   // Controller manage accounts admin
-  .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
+  .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.objects = {
       list_data: [],
@@ -74,7 +74,7 @@ angular.module('controllers.accounts', [])
       },
 
       delete(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.delete.account",
             replacement: {subject: user.email}
@@ -84,12 +84,12 @@ angular.module('controllers.accounts', [])
               if (!err) {
                 $scope.tableParams.reload();
 
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: data.message
                 })
               } else {
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: err.message
                 })
@@ -106,7 +106,7 @@ angular.module('controllers.accounts', [])
             $scope.tableParams.reload();
             $scope.fn.abort();
 
-            piPopup.status({
+            ngPopup.status({
               title: 'Breadcrumb.accounts.create',
               msg: data.message
             })
@@ -123,7 +123,7 @@ angular.module('controllers.accounts', [])
             $scope.tableParams.reload();
             $scope.fn.abort();
 
-            piPopup.status({
+            ngPopup.status({
               title: 'Breadcrumb.accounts.edit',
               msg: data.message
             })
@@ -145,14 +145,14 @@ angular.module('controllers.accounts', [])
       },
 
       resetPwd(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.resetPassword",
             replacement: {subject: user.email}
           },
           () => {
             dataLoader.putData(`${piUrls.resetPassword}/${user._id}`, {}, (err, data) => {
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.auth.resetPassword',
                 msg: err ? err.message : data.message
               })
@@ -163,7 +163,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts normal
-  .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
+  .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.companies = [];
 
@@ -251,7 +251,7 @@ angular.module('controllers.accounts', [])
       },
 
       delete(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.delete.account",
             replacement: {subject: user.email}
@@ -261,12 +261,12 @@ angular.module('controllers.accounts', [])
               if (!err) {
                 $scope.tableParams.reload();
 
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: data.message
                 })
               } else {
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: err.message
                 })
@@ -283,7 +283,7 @@ angular.module('controllers.accounts', [])
             $scope.tableParams.reload();
             $scope.fn.abort();
 
-            piPopup.status({
+            ngPopup.status({
               title: 'Breadcrumb.accounts.create',
               msg: data.message
             })
@@ -300,7 +300,7 @@ angular.module('controllers.accounts', [])
             $scope.tableParams.reload();
             $scope.fn.abort();
 
-            piPopup.status({
+            ngPopup.status({
               title: 'Breadcrumb.accounts.edit',
               msg: data.message
             })
@@ -322,14 +322,14 @@ angular.module('controllers.accounts', [])
       },
 
       resetPwd(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.resetPassword",
             replacement: {subject: user.email}
           },
           () => {
             dataLoader.putData(`${piUrls.resetPassword}/${user._id}`, {}, (err, data) => {
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.auth.resetPassword',
                 msg: err ? err.message : data.message
               })
@@ -339,7 +339,7 @@ angular.module('controllers.accounts', [])
       },
 
       lockAcc(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.lockAccount",
             replacement: {subject: user.email}
@@ -357,7 +357,7 @@ angular.module('controllers.accounts', [])
       },
 
       unlockAcc(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.unlockAccount",
             replacement: {subject: user.email}
@@ -376,7 +376,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts in trash
-  .controller('UsersDisabledCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
+  .controller('UsersDisabledCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.roles = [];
     $scope.roleOptions = {};
@@ -434,7 +434,7 @@ angular.module('controllers.accounts', [])
     $scope.fn = {
 
       delete(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.delete.account",
             replacement: {subject: user.email}
@@ -444,12 +444,12 @@ angular.module('controllers.accounts', [])
               if (!err) {
                 $scope.tableParams.reload();
 
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: data.message
                 })
               } else {
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.delete',
                   msg: err.message
                 })
@@ -460,7 +460,7 @@ angular.module('controllers.accounts', [])
       },
 
       restore(user) {
-        piPopup.confirm(
+        ngPopup.confirm(
           {
             confirmText: "Confirm.restoreAccount",
             replacement: {subject: user.email}
@@ -470,12 +470,12 @@ angular.module('controllers.accounts', [])
               if (!err) {
                 $scope.tableParams.reload();
 
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.restore',
                   msg: data.message
                 })
               } else {
-                piPopup.status({
+                ngPopup.status({
                   title: 'Breadcrumb.accounts.restore',
                   msg: err.message
                 })
