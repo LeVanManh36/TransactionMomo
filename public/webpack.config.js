@@ -40,7 +40,6 @@ module.exports = {
       path.resolve(__dirname, 'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js'),
       path.resolve(__dirname, 'node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.min.js'),
       path.resolve(__dirname, 'node_modules/angular-css/angular-css.min.js'),
-      path.resolve(__dirname, 'libs/angularjs-dropdown-multiselect/angularjs-dropdown-multiselect.min.js'),
       path.resolve(__dirname, 'node_modules/angular-timeago/dist/angular-timeago.min.js'),
       path.resolve(__dirname, 'node_modules/angular-translate/dist/angular-translate.min.js'),
       path.resolve(__dirname, 'node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'),

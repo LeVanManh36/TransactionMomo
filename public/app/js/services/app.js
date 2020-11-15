@@ -2,7 +2,7 @@
 
 //ims Admin services
 
-angular.module('pisignage.services', [])
+angular.module('services.utils', [])
   //https://github.com/logicbomb/lvlFileUpload
   .factory('fileUploader', ['$rootScope', '$q', '$localStorage', function ($rootScope, $q, $localStorage) {
     let xhr, completeTransferDone;
@@ -117,8 +117,8 @@ angular.module('pisignage.services', [])
     };
   }])
   
-  .factory('socket', function ($rootScope, piUrls) {
-    let socket = io.connect(piUrls.base);
+  .factory('socket', function ($rootScope, myUrls) {
+    let socket = io.connect(myUrls.base);
     
     return {
       io: socket,
@@ -144,7 +144,7 @@ angular.module('pisignage.services', [])
     };
   })
   
-  .factory("piPopup", ["$modal", function ($modal) {
+  .factory("ngPopup", ["$modal", function ($modal) {
     
     return {
       confirm: function (objString, cb, cbCancel) {

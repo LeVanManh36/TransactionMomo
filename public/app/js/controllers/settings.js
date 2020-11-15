@@ -1,11 +1,11 @@
 'use strict'
 
-angular.module('piSettings.controllers', [])
-  .controller('SettingsCtrl', function ($scope, $rootScope, piUrls, dataLoader) {
+angular.module('controllers.settings', [])
+  .controller('SettingsCtrl', function ($scope, $rootScope, myUrls, dataLoader) {
 
     $scope.settings = {};
     // getSettings
-    dataLoader.fetchData(piUrls.settings, {}, (err, data) => {
+    dataLoader.fetchData(myUrls.settings, {}, (err, data) => {
       if (err) {
         console.log('dataLoader.getSettings error', err);
       } else {
@@ -14,7 +14,7 @@ angular.module('piSettings.controllers', [])
     });
 
     $scope.saveSettings = () => {
-      dataLoader.postData(piUrls.settings, $scope.settings)
+      dataLoader.postData(myUrls.settings, $scope.settings)
         .then(data => {
           $scope.settings = data.data;
         })

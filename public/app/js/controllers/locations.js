@@ -1,8 +1,8 @@
 'use strict'
 
-angular.module('piLocations.controllers', [])
+angular.module('controllers.locations', [])
   .controller('AreaCtrl',
-    function ($scope, piUrls, $modal, piPopup, dataLoader, piNgTable) {
+    function ($scope, myUrls, $modal, ngPopup, dataLoader, ngDataTable) {
 
       $scope.objects = {
         list_data: [],
@@ -20,7 +20,7 @@ angular.module('piLocations.controllers', [])
       };
 
       var reloadData = (params) => {
-        $scope.filters = piNgTable.setConditions(params);
+        $scope.filters = ngDataTable.setConditions(params);
 
         return dataLoader.getAreas($scope.filters)
           .then(data => {
@@ -35,10 +35,10 @@ angular.module('piLocations.controllers', [])
       }
 
       var initTable = () => {
-        $scope.tableParams = piNgTable.init(
+        $scope.tableParams = ngDataTable.init(
           reloadData,
-          piNgTable.default.option,
-          piNgTable.default.counts
+          ngDataTable.default.option,
+          ngDataTable.default.counts
         )
       }
 
@@ -74,24 +74,24 @@ angular.module('piLocations.controllers', [])
         },
 
         delete(obj) {
-          piPopup.confirm(
+          ngPopup.confirm(
             {
               confirmText: "Confirm.delete.areas",
               replacement: {subject: obj.name}
             },
             () => {
               let params = {hardDelete: true};
-              dataLoader.deleteData(`${piUrls.areas}/${obj._id}`, params, (err, data) => {
+              dataLoader.deleteData(`${myUrls.areas}/${obj._id}`, params, (err, data) => {
                 if (!err) {
                   $scope.tableParams.reload();
 
-                  piPopup.status({
+                  ngPopup.status({
                     title: 'Breadcrumb.areas.delete',
                     msg: data.message
                   })
                 } else {
                   // console.log('Delete Area error: ', err, '-- status:', data);
-                  piPopup.status({
+                  ngPopup.status({
                     title: 'Breadcrumb.areas.delete',
                     msg: err.message
                   })
@@ -103,12 +103,12 @@ angular.module('piLocations.controllers', [])
 
         save() {
           let params = $scope.newObject;
-          dataLoader.postData(piUrls.areas, params, (err, data) => {
+          dataLoader.postData(myUrls.areas, params, (err, data) => {
             if (!err) {
               $scope.tableParams.reload();
               $scope.fn.abort();
 
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.areas.create',
                 msg: data.message
               })
@@ -121,12 +121,12 @@ angular.module('piLocations.controllers', [])
 
         update() {
           let params = $scope.newObject;
-          dataLoader.putData(`${piUrls.areas}/${params._id}`, params, (err, data) => {
+          dataLoader.putData(`${myUrls.areas}/${params._id}`, params, (err, data) => {
             if (!err) {
               $scope.tableParams.reload();
               $scope.fn.abort();
 
-              piPopup.status({
+              ngPopup.status({
                 title: 'Breadcrumb.areas.edit',
                 msg: data.message
               })

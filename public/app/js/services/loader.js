@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('pisignage.services')
-  .factory('dataLoader', function ($http, piUrls, piConstants, $state, $rootScope) {
+angular.module('services.loader', [])
+  .factory('dataLoader', function ($http, myUrls, appConstants, $state, $rootScope) {
 
     return {
       // options: method, url, params or data ...
@@ -10,7 +10,7 @@ angular.module('pisignage.services')
           return new Promise((resolve, reject) => {
             $http(options)
               .success((data, status) => {
-                if (status === piConstants.HTTP_SUCCESS) return resolve(data)
+                if (status === appConstants.HTTP_SUCCESS) return resolve(data)
                 reject(data)
               })
               .error((data, status) => {
@@ -20,7 +20,7 @@ angular.module('pisignage.services')
         } else {
           $http(options)
             .success((data, status) => {
-              if (status === piConstants.HTTP_SUCCESS) {
+              if (status === appConstants.HTTP_SUCCESS) {
                 cb(null, data)
               } else {
                 cb(data, status)
@@ -61,23 +61,23 @@ angular.module('pisignage.services')
       },
 
       getUsers(params = null) {
-        return this.fetchData(piUrls.users, params)
+        return this.fetchData(myUrls.users, params)
       },
 
       getUsersDisabled(params = null) {
-        return this.fetchData(piUrls.users_disabled, params)
+        return this.fetchData(myUrls.users_disabled, params)
       },
 
       getAccounts(params = null) {
-        return this.fetchData(piUrls.accounts, params)
+        return this.fetchData(myUrls.accounts, params)
       },
 
       getRoles(params = null) {
-        return this.fetchData(`${piUrls.users}/getRoles`, params)
+        return this.fetchData(`${myUrls.users}/getRoles`, params)
       },
       
       getAreas(params = null) {
-        return this.fetchData(piUrls.areas, params)
+        return this.fetchData(myUrls.areas, params)
       }
     }
   });

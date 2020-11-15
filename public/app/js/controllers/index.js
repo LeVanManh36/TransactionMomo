@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('piIndex.controllers', [])
+angular.module('controllers.index', [])
 
-  .controller('IndexCtrl', function ($rootScope, $scope, $state, $location, piConstants) {
+  .controller('IndexCtrl', function ($rootScope, $scope, $state, $location, appConstants) {
 
     let currentUser = $rootScope.authUser;
     let redirectPath = 'login';
     if (currentUser) {
-      $rootScope.isRoleAdmin = currentUser.role === piConstants.roles.admin;
+      $rootScope.isRoleAdmin = currentUser.role === appConstants.roles.admin;
       if ($location.$$path === '/start') {
         redirectPath = '/devices';
         if (currentUser.role === 'root') redirectPath = "/accounts";

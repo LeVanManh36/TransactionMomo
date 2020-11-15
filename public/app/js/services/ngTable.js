@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('pisignage.services')
-  .factory('piNgTable', function (NgTableParams) {
+angular.module('services.table', [])
+  .factory('ngDataTable', function (NgTableParams) {
 
     return {
 

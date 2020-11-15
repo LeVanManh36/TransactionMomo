@@ -1,18 +1,18 @@
 'use strict'
 
-angular.module('piProfile.controllers', [])
-  .controller('ProfileCtrl', function ($scope, piUrls, piPopup, $localStorage, $location, $window, dataLoader) {
+angular.module('controllers.profiles', [])
+  .controller('ProfileCtrl', function ($scope, myUrls, ngPopup, $localStorage, $location, $window, dataLoader) {
 
     $scope.object = {};
     $scope.statusMsg = null;
 
     $scope.fn = {
       changePw() {
-        dataLoader.postData(piUrls.changePassword, $scope.object)
+        dataLoader.postData(myUrls.changePassword, $scope.object)
           .then(data => {
             $scope.fn.abort();
 
-            piPopup.status(
+            ngPopup.status(
               {
                 title: 'Breadcrumb.accounts.changePassword',
                 msg: data.message
@@ -25,7 +25,7 @@ angular.module('piProfile.controllers', [])
           })
           .catch(err => {
             // $scope.statusMsg = err.message;
-            piPopup.status(
+            ngPopup.status(
               {
                 title: 'Breadcrumb.accounts.changePassword',
                 msg: err.message

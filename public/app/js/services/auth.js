@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('piAuth.service', [])
-  .factory('AuthenticationService', function ($http, $localStorage, piUrls, piConstants, dataLoader) {
+angular.module('services.authenticate', [])
+  .factory('AuthenticationService', function ($http, $localStorage, myUrls, appConstants, dataLoader) {
 
     function Login(username, password, callback) {
-      dataLoader.postData(piUrls.login, {username, password}, (err, data) => {
+      dataLoader.postData(myUrls.login, {username, password}, (err, data) => {
         if (err) {
           return callback(err.message);
         }
         data = data.data;
-        const roles = Object.values(piConstants.roles);
+        const roles = Object.values(appConstants.roles);
         if (roles.indexOf(data.user.role) < 0) {
           callback("Message.error.permission");
         } else {

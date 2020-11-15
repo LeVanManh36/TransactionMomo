@@ -1,30 +1,31 @@
 'use strict';
 
-angular.module('piServerApp', [
+angular.module('appServices', [
     'ui.router',
     'ui.bootstrap',
     'ui.sortable',
     'ui.utils.masks',
     'angularCSS',
-    'yaru22.angular-timeago',
-    'angularjs-dropdown-multiselect',
-    'piConfig',
-    'piIndex.controllers',
-    'piAuth.service',
-    'piAuth.controllers',
-    'piProfile.controllers',
-    'piAccounts.controllers',
-    'piLocations.controllers',
-    'pisignage.filters',
-    'pisignage.directives',
-    'pisignage.services',
+    'appConfig',
+    'controllers.index',
+    'controllers.authenticate',
+    'controllers.profiles',
+    'controllers.accounts',
+    'controllers.locations',
+    'filters.utils',
+    'directives.utils',
+    'services.authenticate',
+    'services.loader',
+    'services.table',
+    'services.utils',
     'ngStorage',
     'ngTable',
-    'rzSlider',
-    'pascalprecht.translate'
+    'yaru22.angular-timeago',
+    'pascalprecht.translate',
+    'rzSlider'
   ])
 
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, piConstants) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, appConstants) {
 
     // **************** localization ***************** //
     $translateProvider.useStaticFilesLoader({
@@ -41,7 +42,7 @@ angular.module('piServerApp', [
     // ***************** end ***************** //
     let urlOtherWise = '/start';
     $urlRouterProvider.otherwise(urlOtherWise);
-    const {roles} = piConstants;
+    const {roles} = appConstants;
     const permissions = {
       admin: roles.admin,
       basic: [roles.admin, roles.maker, roles.checker],
@@ -152,7 +153,7 @@ angular.module('piServerApp', [
 
       return {
         'response': function (response) {
-          if (response.status === piConstants.HTTP_UNAUTHORIZED) return $location.path("login");
+          if (response.status === appConstants.HTTP_UNAUTHORIZED) return $location.path("login");
 
           if (!onlineStatus) {
             onlineStatus = true;
@@ -162,7 +163,7 @@ angular.module('piServerApp', [
         },
 
         'responseError': function (response) {
-          if (response.status === piConstants.HTTP_UNAUTHORIZED) return $location.path("login");
+          if (response.status === appConstants.HTTP_UNAUTHORIZED) return $location.path("login");
 
           if (onlineStatus) {
             onlineStatus = false;
@@ -175,8 +176,7 @@ angular.module('piServerApp', [
 
   })
 
-  .run(function ($window, $modal, $http, $rootScope, $location, $localStorage, piUrls, piLocales,
-                 $translate, timeAgoSettings) {
+  .run(function ($window, $modal, $http, $rootScope, $location, $localStorage, appLocales, $translate, timeAgoSettings) {
     // Keep user logged in after page refresh
     if ($localStorage.currentUser) {
       let currentUser = $localStorage.currentUser;
@@ -208,8 +208,8 @@ angular.module('piServerApp', [
     }
 
     // set localization default
-    $rootScope.languages = piLocales.languages;
-    $rootScope.defaultLanguage = langs.default || piLocales.defaultLanguage;
+    $rootScope.languages = appLocales.languages;
+    $rootScope.defaultLanguage = langs.default || appLocales.defaultLanguage;
     if (!$localStorage.currentLang) {
       $localStorage.currentLang = $rootScope.defaultLanguage
     }
