@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('services.table', [])
-  .factory('piNgTable', function (NgTableParams) {
+  .factory('ngDataTable', function (NgTableParams) {
 
     return {
 

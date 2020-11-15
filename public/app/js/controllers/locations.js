@@ -2,7 +2,7 @@
 
 angular.module('controllers.locations', [])
   .controller('AreaCtrl',
-    function ($scope, piUrls, $modal, piPopup, dataLoader, piNgTable) {
+    function ($scope, piUrls, $modal, piPopup, dataLoader, ngDataTable) {
 
       $scope.objects = {
         list_data: [],
@@ -20,7 +20,7 @@ angular.module('controllers.locations', [])
       };
 
       var reloadData = (params) => {
-        $scope.filters = piNgTable.setConditions(params);
+        $scope.filters = ngDataTable.setConditions(params);
 
         return dataLoader.getAreas($scope.filters)
           .then(data => {
@@ -35,10 +35,10 @@ angular.module('controllers.locations', [])
       }
 
       var initTable = () => {
-        $scope.tableParams = piNgTable.init(
+        $scope.tableParams = ngDataTable.init(
           reloadData,
-          piNgTable.default.option,
-          piNgTable.default.counts
+          ngDataTable.default.option,
+          ngDataTable.default.counts
         )
       }
 

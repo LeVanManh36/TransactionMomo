@@ -2,7 +2,7 @@
 
 angular.module('controllers.accounts', [])
   // Controller manage accounts admin
-  .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, piNgTable) {
+  .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
 
     $scope.objects = {
       list_data: [],
@@ -20,7 +20,7 @@ angular.module('controllers.accounts', [])
     };
 
     var reloadData = (params) => {
-      $scope.filters = piNgTable.setConditions(params);
+      $scope.filters = ngDataTable.setConditions(params);
 
       return dataLoader.getAccounts($scope.filters)
         .then(data => {
@@ -35,10 +35,10 @@ angular.module('controllers.accounts', [])
     }
 
     var initTable = () => {
-      $scope.tableParams = piNgTable.init(
+      $scope.tableParams = ngDataTable.init(
         reloadData,
-        piNgTable.default.option,
-        piNgTable.default.counts
+        ngDataTable.default.option,
+        ngDataTable.default.counts
       )
     }
 
@@ -163,7 +163,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts normal
-  .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, piNgTable) {
+  .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
 
     $scope.companies = [];
 
@@ -197,7 +197,7 @@ angular.module('controllers.accounts', [])
     };
 
     var reloadData = (params) => {
-      $scope.filters = piNgTable.setConditions(params);
+      $scope.filters = ngDataTable.setConditions(params);
 
       return dataLoader.getUsers($scope.filters)
         .then(data => {
@@ -212,10 +212,10 @@ angular.module('controllers.accounts', [])
     }
 
     var initTable = () => {
-      $scope.tableParams = piNgTable.init(
+      $scope.tableParams = ngDataTable.init(
         reloadData,
-        piNgTable.default.option,
-        piNgTable.default.counts
+        ngDataTable.default.option,
+        ngDataTable.default.counts
       )
     }
 
@@ -376,7 +376,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts in trash
-  .controller('UsersDisabledCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, piNgTable) {
+  .controller('UsersDisabledCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, ngDataTable) {
 
     $scope.roles = [];
     $scope.roleOptions = {};
@@ -408,7 +408,7 @@ angular.module('controllers.accounts', [])
     };
 
     var reloadData = (params) => {
-      $scope.filters = piNgTable.setConditions(params);
+      $scope.filters = ngDataTable.setConditions(params);
       return dataLoader.getUsersDisabled($scope.filters)
         .then(data => {
           let {filters, ...others} = data;
@@ -422,10 +422,10 @@ angular.module('controllers.accounts', [])
     }
 
     var initTable = () => {
-      $scope.tableParams = piNgTable.init(
+      $scope.tableParams = ngDataTable.init(
         reloadData,
-        piNgTable.default.option,
-        piNgTable.default.counts
+        ngDataTable.default.option,
+        ngDataTable.default.counts
       )
     }
 
