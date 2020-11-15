@@ -75,7 +75,7 @@ angular.module('directives.utils', [])
     };
   }])
 
-  .directive('nodeimsFileUpload', ['fileUploader', 'piUrls', function (fileUploader, piUrls) {
+  .directive('nodeimsFileUpload', ['fileUploader', 'myUrls', function (fileUploader, myUrls) {
     return {
       restrict: 'E',
       replace: true,
@@ -165,7 +165,7 @@ angular.module('directives.utils', [])
           scope.upload = function () {
             scope.onstart();
 
-            let data = null, uploadPath = piUrls.files;
+            let data = null, uploadPath = myUrls.files;
 
             if (scope.getAdditionalData) {
               data = scope.getAdditionalData();
@@ -281,8 +281,7 @@ angular.module('directives.utils', [])
         });
       }
     };
-  }
-  ])
+  }])
 
   .directive('errSrc', function () {
     return {

@@ -2,7 +2,7 @@
 
 angular.module('controllers.accounts', [])
   // Controller manage accounts admin
-  .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+  .controller('AccountsCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.objects = {
       list_data: [],
@@ -80,7 +80,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.deleteData(`${piUrls.accounts}/${user._id}`, {}, (err, data) => {
+            dataLoader.deleteData(`${myUrls.accounts}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
 
@@ -101,7 +101,7 @@ angular.module('controllers.accounts', [])
 
       save() {
         let params = $scope.newUser;
-        dataLoader.postData(piUrls.accounts, params, (err, data) => {
+        dataLoader.postData(myUrls.accounts, params, (err, data) => {
           if (!err) {
             $scope.tableParams.reload();
             $scope.fn.abort();
@@ -118,7 +118,7 @@ angular.module('controllers.accounts', [])
 
       update() {
         let params = $scope.newUser;
-        dataLoader.putData(`${piUrls.accounts}/${params._id}`, params, (err, data) => {
+        dataLoader.putData(`${myUrls.accounts}/${params._id}`, params, (err, data) => {
           if (!err) {
             $scope.tableParams.reload();
             $scope.fn.abort();
@@ -151,7 +151,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.putData(`${piUrls.resetPassword}/${user._id}`, {}, (err, data) => {
+            dataLoader.putData(`${myUrls.resetPassword}/${user._id}`, {}, (err, data) => {
               ngPopup.status({
                 title: 'Breadcrumb.auth.resetPassword',
                 msg: err ? err.message : data.message
@@ -163,7 +163,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts normal
-  .controller('UserCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+  .controller('UserCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.companies = [];
 
@@ -257,7 +257,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.deleteData(`${piUrls.users}/${user._id}`, {}, (err, data) => {
+            dataLoader.deleteData(`${myUrls.users}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
 
@@ -278,7 +278,7 @@ angular.module('controllers.accounts', [])
 
       save() {
         let params = $scope.newUser;
-        dataLoader.postData(piUrls.users, params, (err, data) => {
+        dataLoader.postData(myUrls.users, params, (err, data) => {
           if (!err) {
             $scope.tableParams.reload();
             $scope.fn.abort();
@@ -295,7 +295,7 @@ angular.module('controllers.accounts', [])
 
       update() {
         let params = $scope.newUser;
-        dataLoader.putData(`${piUrls.users}/${params._id}`, params, (err, data) => {
+        dataLoader.putData(`${myUrls.users}/${params._id}`, params, (err, data) => {
           if (!err) {
             $scope.tableParams.reload();
             $scope.fn.abort();
@@ -328,7 +328,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.putData(`${piUrls.resetPassword}/${user._id}`, {}, (err, data) => {
+            dataLoader.putData(`${myUrls.resetPassword}/${user._id}`, {}, (err, data) => {
               ngPopup.status({
                 title: 'Breadcrumb.auth.resetPassword',
                 msg: err ? err.message : data.message
@@ -345,7 +345,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.putData(`${piUrls.lockAcc}/${user._id}`, {}, (err, data) => {
+            dataLoader.putData(`${myUrls.lockAcc}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
               } else {
@@ -363,7 +363,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.putData(`${piUrls.unlockAcc}/${user._id}`, {}, (err, data) => {
+            dataLoader.putData(`${myUrls.unlockAcc}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
               } else {
@@ -376,7 +376,7 @@ angular.module('controllers.accounts', [])
     };
   })
   // Controller manage accounts in trash
-  .controller('UsersDisabledCtrl', function ($scope, piUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+  .controller('UsersDisabledCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
 
     $scope.roles = [];
     $scope.roleOptions = {};
@@ -440,7 +440,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.deleteData(`${piUrls.users_disabled}/${user._id}`, {}, (err, data) => {
+            dataLoader.deleteData(`${myUrls.users_disabled}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
 
@@ -466,7 +466,7 @@ angular.module('controllers.accounts', [])
             replacement: {subject: user.email}
           },
           () => {
-            dataLoader.putData(`${piUrls.users_disabled}/${user._id}`, {}, (err, data) => {
+            dataLoader.putData(`${myUrls.users_disabled}/${user._id}`, {}, (err, data) => {
               if (!err) {
                 $scope.tableParams.reload();
 

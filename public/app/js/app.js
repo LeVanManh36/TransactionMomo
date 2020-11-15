@@ -25,7 +25,7 @@ angular.module('appServices', [
     'rzSlider'
   ])
 
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, piConstants) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, appConstants) {
 
     // **************** localization ***************** //
     $translateProvider.useStaticFilesLoader({
@@ -42,7 +42,7 @@ angular.module('appServices', [
     // ***************** end ***************** //
     let urlOtherWise = '/start';
     $urlRouterProvider.otherwise(urlOtherWise);
-    const {roles} = piConstants;
+    const {roles} = appConstants;
     const permissions = {
       admin: roles.admin,
       basic: [roles.admin, roles.maker, roles.checker],
@@ -153,7 +153,7 @@ angular.module('appServices', [
 
       return {
         'response': function (response) {
-          if (response.status === piConstants.HTTP_UNAUTHORIZED) return $location.path("login");
+          if (response.status === appConstants.HTTP_UNAUTHORIZED) return $location.path("login");
 
           if (!onlineStatus) {
             onlineStatus = true;
@@ -163,7 +163,7 @@ angular.module('appServices', [
         },
 
         'responseError': function (response) {
-          if (response.status === piConstants.HTTP_UNAUTHORIZED) return $location.path("login");
+          if (response.status === appConstants.HTTP_UNAUTHORIZED) return $location.path("login");
 
           if (onlineStatus) {
             onlineStatus = false;
@@ -176,8 +176,7 @@ angular.module('appServices', [
 
   })
 
-  .run(function ($window, $modal, $http, $rootScope, $location, $localStorage, piUrls, piLocales,
-                 $translate, timeAgoSettings) {
+  .run(function ($window, $modal, $http, $rootScope, $location, $localStorage, appLocales, $translate, timeAgoSettings) {
     // Keep user logged in after page refresh
     if ($localStorage.currentUser) {
       let currentUser = $localStorage.currentUser;
@@ -209,8 +208,8 @@ angular.module('appServices', [
     }
 
     // set localization default
-    $rootScope.languages = piLocales.languages;
-    $rootScope.defaultLanguage = langs.default || piLocales.defaultLanguage;
+    $rootScope.languages = appLocales.languages;
+    $rootScope.defaultLanguage = langs.default || appLocales.defaultLanguage;
     if (!$localStorage.currentLang) {
       $localStorage.currentLang = $rootScope.defaultLanguage
     }

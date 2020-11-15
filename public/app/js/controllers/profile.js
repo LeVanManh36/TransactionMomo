@@ -1,14 +1,14 @@
 'use strict'
 
 angular.module('controllers.profiles', [])
-  .controller('ProfileCtrl', function ($scope, piUrls, ngPopup, $localStorage, $location, $window, dataLoader) {
+  .controller('ProfileCtrl', function ($scope, myUrls, ngPopup, $localStorage, $location, $window, dataLoader) {
 
     $scope.object = {};
     $scope.statusMsg = null;
 
     $scope.fn = {
       changePw() {
-        dataLoader.postData(piUrls.changePassword, $scope.object)
+        dataLoader.postData(myUrls.changePassword, $scope.object)
           .then(data => {
             $scope.fn.abort();
 

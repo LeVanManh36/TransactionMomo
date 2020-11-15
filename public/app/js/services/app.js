@@ -117,8 +117,8 @@ angular.module('services.utils', [])
     };
   }])
   
-  .factory('socket', function ($rootScope, piUrls) {
-    let socket = io.connect(piUrls.base);
+  .factory('socket', function ($rootScope, myUrls) {
+    let socket = io.connect(myUrls.base);
     
     return {
       io: socket,

@@ -2,7 +2,7 @@
 
 angular.module('controllers.locations', [])
   .controller('AreaCtrl',
-    function ($scope, piUrls, $modal, ngPopup, dataLoader, ngDataTable) {
+    function ($scope, myUrls, $modal, ngPopup, dataLoader, ngDataTable) {
 
       $scope.objects = {
         list_data: [],
@@ -81,7 +81,7 @@ angular.module('controllers.locations', [])
             },
             () => {
               let params = {hardDelete: true};
-              dataLoader.deleteData(`${piUrls.areas}/${obj._id}`, params, (err, data) => {
+              dataLoader.deleteData(`${myUrls.areas}/${obj._id}`, params, (err, data) => {
                 if (!err) {
                   $scope.tableParams.reload();
 
@@ -103,7 +103,7 @@ angular.module('controllers.locations', [])
 
         save() {
           let params = $scope.newObject;
-          dataLoader.postData(piUrls.areas, params, (err, data) => {
+          dataLoader.postData(myUrls.areas, params, (err, data) => {
             if (!err) {
               $scope.tableParams.reload();
               $scope.fn.abort();
@@ -121,7 +121,7 @@ angular.module('controllers.locations', [])
 
         update() {
           let params = $scope.newObject;
-          dataLoader.putData(`${piUrls.areas}/${params._id}`, params, (err, data) => {
+          dataLoader.putData(`${myUrls.areas}/${params._id}`, params, (err, data) => {
             if (!err) {
               $scope.tableParams.reload();
               $scope.fn.abort();

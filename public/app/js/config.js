@@ -1,7 +1,7 @@
 
 angular.module('appConfig', [])
   
-  .constant('piUrls', (function () {
+  .constant('myUrls', (function () {
     
     let protocol, base = 'http://localhost/';
     //IE fix !
@@ -37,7 +37,7 @@ angular.module('appConfig', [])
     }
   })())
   
-  .constant('piConstants', (function () {
+  .constant('appConstants', (function () {
     
     return {
       videoRegex:           /(mp4|mov|m4v|avi|webm|wmv|flv|mkv|mpg|mpeg|3gp)$/i,
@@ -140,7 +140,7 @@ angular.module('appConfig', [])
   
   .constant('moment', moment)
 
-  .constant('piLocales', (function () {
+  .constant('appLocales', (function () {
     return {
       defaultLanguage: "vi",
       languages: ["vi", "en", "ja"]
