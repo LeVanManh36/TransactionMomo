@@ -1,5 +1,5 @@
 
-angular.module('piConfig', [])
+angular.module('appConfig', [])
   
   .constant('piUrls', (function () {
     

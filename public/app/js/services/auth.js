@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('piAuth.service', [])
+angular.module('services.authenticate', [])
   .factory('AuthenticationService', function ($http, $localStorage, piUrls, piConstants, dataLoader) {
 
     function Login(username, password, callback) {

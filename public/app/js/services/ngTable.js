@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pisignage.services')
+angular.module('services.table', [])
   .factory('piNgTable', function (NgTableParams) {
 
     return {

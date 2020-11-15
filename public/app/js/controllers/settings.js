@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('piSettings.controllers', [])
+angular.module('controllers.settings', [])
   .controller('SettingsCtrl', function ($scope, $rootScope, piUrls, dataLoader) {
 
     $scope.settings = {};

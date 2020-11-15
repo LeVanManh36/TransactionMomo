@@ -2,7 +2,7 @@
 
 //ims Admin services
 
-angular.module('pisignage.services', [])
+angular.module('services.utils', [])
   //https://github.com/logicbomb/lvlFileUpload
   .factory('fileUploader', ['$rootScope', '$q', '$localStorage', function ($rootScope, $q, $localStorage) {
     let xhr, completeTransferDone;

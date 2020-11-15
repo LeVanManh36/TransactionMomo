@@ -2,7 +2,7 @@
 
 /* Filters */
 
-angular.module('pisignage.filters', [])
+angular.module('filters.utils', [])
   .filter('truncate', function () {
     return function (text, length) {
       if (isNaN(length)) length = 60;
@@ -13,6 +13,7 @@ angular.module('pisignage.filters', [])
       return String(text).substring(0, length - end.length) + end
     }
   })
+
   .filter('readable', function () {
     return function (str) {
       let str1 = "";

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('piIndex.controllers', [])
+angular.module('controllers.index', [])
 
   .controller('IndexCtrl', function ($rootScope, $scope, $state, $location, piConstants) {
 

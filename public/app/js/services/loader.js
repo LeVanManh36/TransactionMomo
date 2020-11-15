@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pisignage.services')
+angular.module('services.loader', [])
   .factory('dataLoader', function ($http, piUrls, piConstants, $state, $rootScope) {
 
     return {

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('piAuth.controllers', [])
+angular.module('controllers.authenticate', [])
 
   .controller('LoginController', function ($rootScope, $location, AuthenticationService) {
     var vm = this;

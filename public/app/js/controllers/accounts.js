@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('piAccounts.controllers', [])
+angular.module('controllers.accounts', [])
   // Controller manage accounts admin
   .controller('AccountsCtrl', function ($scope, piUrls, $state, $modal, $window, piPopup, dataLoader, piNgTable) {
 

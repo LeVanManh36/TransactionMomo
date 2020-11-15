@@ -1,27 +1,28 @@
 'use strict';
 
-angular.module('piServerApp', [
+angular.module('appServices', [
     'ui.router',
     'ui.bootstrap',
     'ui.sortable',
     'ui.utils.masks',
     'angularCSS',
-    'yaru22.angular-timeago',
-    'angularjs-dropdown-multiselect',
-    'piConfig',
-    'piIndex.controllers',
-    'piAuth.service',
-    'piAuth.controllers',
-    'piProfile.controllers',
-    'piAccounts.controllers',
-    'piLocations.controllers',
-    'pisignage.filters',
-    'pisignage.directives',
-    'pisignage.services',
+    'appConfig',
+    'controllers.index',
+    'controllers.authenticate',
+    'controllers.profiles',
+    'controllers.accounts',
+    'controllers.locations',
+    'filters.utils',
+    'directives.utils',
+    'services.authenticate',
+    'services.loader',
+    'services.table',
+    'services.utils',
     'ngStorage',
     'ngTable',
-    'rzSlider',
-    'pascalprecht.translate'
+    'yaru22.angular-timeago',
+    'pascalprecht.translate',
+    'rzSlider'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, piConstants) {

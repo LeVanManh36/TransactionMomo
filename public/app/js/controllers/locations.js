@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('piLocations.controllers', [])
+angular.module('controllers.locations', [])
   .controller('AreaCtrl',
     function ($scope, piUrls, $modal, piPopup, dataLoader, piNgTable) {
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pisignage.directives', [])
+angular.module('directives.utils', [])
 
   .directive('showonhoverparent', function () {
     return {
@@ -220,116 +220,6 @@ angular.module('pisignage.directives', [])
         }
       }
     }
-  }])
-
-  .directive('categories', ['$http', 'piUrls', 'piConstants', function ($http, piUrls, piConstants, truncate) {
-    let template =
-      `<form>
-        <div class="row">
-          <div ng-repeat="category in cat.categories" class="col-sm-3">
-            <label class="checkbox-inline pull-left">
-              <input type="checkbox" value="{{category.name}}"
-                ng-checked="selectedLabels.indexOf(category.name) &gt; -1"
-                ng-click="cat.toggleSelection(category.name)"
-              />
-              <small class="text-muted">
-                {{category.name | truncate:18}}
-              </small>
-            </label>
-          </div>
-        </div>
-      </form>`;
-
-    return {
-      scope: {
-        selectedLabels: '=',
-        labels: '='
-      },
-      restrict: 'E',
-      replace: 'true',
-      template: template,
-      link: function (scope, elem, attr) {
-        scope.cat = {}   //holds all the category related objects
-        $http
-          .get(piUrls.labels, {pageSize: -1})
-          .success((data, status) => {
-            if (status === piConstants.HTTP_SUCCESS) {
-              scope.cat.categories = data.data.list_data.filter(item => item.mode === piConstants.labelMode.asset);
-              if (scope.labels) scope.labels = scope.cat.categories;
-            }
-          })
-          .error((data, status) => {
-            console.log('Load categories error:', data, ' --status:', status)
-          });
-
-        // toggle selection for a given fruit by name
-        scope.cat.toggleSelection = function (category) {
-          let idx = scope.selectedLabels.indexOf(category);
-          if (idx > -1) {
-            // is currently selected
-            scope.selectedLabels.splice(idx, 1);
-          } else {
-            // is newly selected
-            scope.selectedLabels.push(category);
-          }
-        };
-      }
-    };
-  }])
-
-  .directive('mqCategories', ['$http', 'piUrls', 'piConstants', function ($http, piUrls, piConstants, truncate) {
-    let template =
-      `<form>
-        <div class="row">
-          <div ng-repeat="category in cat.categories" class="col-sm-3">
-            <label class="checkbox-inline pull-left">
-              <input type="checkbox" value="{{category._id}}"
-                ng-checked="selectedLabels.indexOf(category._id) &gt; -1"
-                ng-click="cat.toggleSelection(category._id)"
-              />
-              <small class="text-muted">
-                {{category.name | truncate:18}}
-              </small>
-            </label>
-          </div>
-        </div>
-      </form>`;
-
-    return {
-      scope: {
-        selectedLabels: '=',
-        labels: '='
-      },
-      restrict: 'E',
-      replace: 'true',
-      template: template,
-      link: function (scope, elem, attr) {
-        scope.cat = {}   //holds all the category related objects
-        $http
-          .get(piUrls.labels, {pageSize: -1})
-          .success((data, status) => {
-            if (status === piConstants.HTTP_SUCCESS) {
-              scope.cat.categories = data.data.list_data.filter(item => item.mode === piConstants.labelMode.asset);
-              if (scope.labels) scope.labels = scope.cat.categories;
-            }
-          })
-          .error((data, status) => {
-            console.log('Load categories error:', data, ' --status:', status)
-          });
-
-        // toggle selection for a given fruit by name
-        scope.cat.toggleSelection = function (category) {
-          let idx = scope.selectedLabels.indexOf(category);
-          if (idx > -1) {
-            // is currently selected
-            scope.selectedLabels.splice(idx, 1);
-          } else {
-            // is newly selected
-            scope.selectedLabels.push(category);
-          }
-        };
-      }
-    };
   }])
 
   .directive('unsavedChangesWarning', ['saveChangesPrompt', '$parse', function (saveChangesPrompt, $parse) {

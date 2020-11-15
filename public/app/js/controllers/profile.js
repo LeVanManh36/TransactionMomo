@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('piProfile.controllers', [])
+angular.module('controllers.profiles', [])
   .controller('ProfileCtrl', function ($scope, piUrls, piPopup, $localStorage, $location, $window, dataLoader) {
 
     $scope.object = {};
