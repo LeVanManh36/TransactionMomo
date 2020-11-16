@@ -320,14 +320,13 @@
     }
   },
   "Confirm": {
+    "default": "Vui lòng xác nhận",
     "resetPassword": "Bạn có muốn đặt lại mật khẩu cho tài khoản '{{subject}}'?",
     "lockAccount": "Bạn có muốn khóa tài khoản '{{subject}}'?",
     "unlockAccount": "Bạn có muốn mở khóa tài khoản '{{subject}}'?",
     "restoreAccount": "Bạn có muốn khôi phục tài khoản '{{subject}}'?",
-    "edit": {
-
-    },
     "delete": {
+      "default": "Bạn có muốn xóa",
       "account": "Bạn có muốn xóa tài khoản '{{subject}}'?",
       "customer": "Bạn có muốn xóa khách hàng '{{subject}}'?",
       "file": "Bạn có muốn xóa tệp '{{subject}}'?",
@@ -397,18 +396,13 @@
   },
   "Selection": {
     "category": "Chọn danh mục",
-    "categories": {
-      "file": "Chọn danh mục cho các tập tin",
-      "link": "Chọn danh mục cho liên kết"
-    },
     "date": "Chọn ngày"
   },
   "Roles": {
     "admin": "Quản trị hệ thống",
-    "maker": "Cài đặt nội dung",
-    "checker": "Duyệt nội dung",
-    "streamer": "Streamer",
-    "owner": "Chủ biển quảng cáo",
+    "customer": "Owner",
+    "staff": "Owner",
+    "owner": "Owner",
     "viewer": "Theo dõi thiết bị"
   },
   "Subscriptions": {

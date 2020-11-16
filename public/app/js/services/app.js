@@ -155,7 +155,7 @@ angular.module('services.utils', [])
               '$scope', '$modalInstance', 'msg',
               function ($scope, $modalInstance, msgObj) {
                 if (!msgObj.title) {
-                  msgObj.title = 'Popup.confirm.msg';
+                  msgObj.title = 'Confirm.default';
                 }
 
                 $scope.noPrepend = true;
