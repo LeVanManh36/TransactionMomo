@@ -22,18 +22,14 @@ angular.module('appConfig', [])
       logout:               base + 'api/logout',
       changePassword:       base + 'api/change-password',
       resetPassword:        base + 'api/reset-password',
-      lockAcc:              base + 'api/lock-account',
-      unlockAcc:            base + 'api/unlock-account',
       profile:              base + 'api/profile',
-      settings:             base + 'api/settings',
-      licenses:             base + 'api/licenses',
       accounts:             base + 'api/accounts',   // admin
       users:                base + 'api/users',      // normal
       users_disabled:       base + 'api/users-disabled',
-      companies:            base + 'api/companies',
-      areas:                base + 'api/areas',
-      oohs:                 base + 'api/ooh-positions',
-      labels:               base + 'api/labels'
+      lockAcc:              base + 'api/lock-account',
+      unlockAcc:            base + 'api/unlock-account',
+      settings:             base + 'api/settings',
+      areas:                base + 'api/areas'
     }
   })())
   
