@@ -22,7 +22,6 @@ angular.module('controllers.authenticate', [])
           let redirectPath = '/devices';
           if (user.role === 'root') redirectPath = "/accounts";
           if (user.role === 'admin') redirectPath = "/users";
-          if (user.role === 'streamer') redirectPath = "/streaming";
           $location.path(redirectPath);
         } else {
           vm.error = err || "Message.error.login";

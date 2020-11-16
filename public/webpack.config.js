@@ -9,8 +9,7 @@ module.exports = {
   entry: {
     'custom.css': [
       path.resolve(__dirname, 'css/custom.css'),
-      path.resolve(__dirname, 'css/theme.css'),
-      path.resolve(__dirname, 'css/recorder.css')
+      path.resolve(__dirname, 'css/theme.css')
     ],
     'main.css': [
       path.resolve(__dirname, 'node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.css'),
@@ -20,7 +19,6 @@ module.exports = {
       // path.resolve(__dirname, 'node_modules/flag-icon-css/css/flag-icon.css')
     ],
     'angular.css': [
-      path.resolve(__dirname, 'node_modules/angularjs-slider/dist/rzslider.css'),
       path.resolve(__dirname, 'node_modules/ng-sortable/dist/ng-sortable.css'),
       path.resolve(__dirname, 'node_modules/ng-sortable/dist/ng-sortable.style.css'),
       path.resolve(__dirname, 'node_modules/ng-table/bundles/ng-table.min.css')
@@ -32,7 +30,6 @@ module.exports = {
       path.resolve(__dirname, 'node_modules/bootstrap-progressbar/bootstrap-progressbar.js'),
       path.resolve(__dirname, 'node_modules/perfect-scrollbar/dist/perfect-scrollbar.js'),
       path.resolve(__dirname, 'node_modules/select2/dist/js/select2.min.js'),
-      path.resolve(__dirname, 'libs/wavesurfer/wavesurfer.min.js'),
       path.resolve(__dirname, 'libs/sender/cast_sender.js')
     ],
     "angularjs": [
@@ -46,7 +43,6 @@ module.exports = {
       path.resolve(__dirname, 'node_modules/ng-mask/dist/ngMask.min.js'),
     ],
     'angular.utils': [
-      // path.resolve(__dirname, 'node_modules/angularjs-slider/dist/rzslider.min.js'),
       path.resolve(__dirname, 'node_modules/ng-sortable/dist/ng-sortable.min.js'),
       path.resolve(__dirname, 'node_modules/ng-table/bundles/ng-table.min.js'),
       path.resolve(__dirname, 'node_modules/ngstorage/ngStorage.min.js')
@@ -96,7 +92,6 @@ module.exports = {
       patterns: [
         // {from: 'node_modules/angular', to: 'angular'},
         {from: 'node_modules/angular-input-masks', to: 'angular-input-masks'},
-        {from: 'node_modules/angularjs-slider', to: 'angularjs-slider'},
         {from: 'node_modules/async', to: 'async'},
         {from: 'node_modules/bootstrap', to: 'bootstrap'},
         {from: 'node_modules/flag-icon-css', to: 'flag-icon-css'},
