@@ -5,7 +5,7 @@
 <div class="modal-body">
     <h5 ng-if="noPrepend">
         <b ng-if="!msgObj.text">
-            {{ (msgObj.confirmText || 'Popup.confirm.delete') | translate:msgObj.replacement }}
+            {{ (msgObj.confirmText || 'Confirm.delete.default') | translate:msgObj.replacement }}
         </b>
 
         <b ng-if="msgObj.text">
@@ -14,7 +14,7 @@
     </h5>
 
     <h5 ng-if="!noPrepend">
-        <span>{{ 'Popup.confirm.delete' | translate }}</span> <b>{{ msgObj.text | translate }}</b>?
+        <span>{{ 'Confirm.delete.default' | translate }}</span> <b>{{ msgObj.text | translate }}</b>?
     </h5>
 </div>
 <div class="modal-footer">

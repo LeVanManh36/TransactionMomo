@@ -21,8 +21,7 @@ angular.module('appServices', [
     'ngStorage',
     'ngTable',
     'yaru22.angular-timeago',
-    'pascalprecht.translate',
-    'rzSlider'
+    'pascalprecht.translate'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider, appConstants) {

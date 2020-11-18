@@ -2,9 +2,6 @@
   "content": "English",
   "Roles": {
     "admin": "Admin",
-    "maker": "Maker",
-    "checker": "Checker",
-    "streamer": "Streamer",
     "owner": "Owner",
     "viewer": "Viewer"
   },

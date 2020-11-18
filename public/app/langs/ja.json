@@ -320,14 +320,13 @@
     }
   },
   "Confirm": {
+    "default": "確認",
     "resetPassword": "'{{subject}}'アカウントのパスワードを変更しますがよろしいでしょうか。",
     "lockAccount": "'{{subject}}'アカウントを無効にしますがよろしいでしょうか。",
     "unlockAccount": "'{{subject}}'アカウントを有効にしますがよろしいでしょうか。",
     "restoreAccount": "'{{subject}}'のアカウントを復元しますがよろしいでしょうか。",
-    "edit": {
-
-    },
     "delete": {
+      "default": "削除してもよろしいですか。",
       "account": "このアカウントを削除してもよろしいですか。",
       "company": "この顧客を削除してもよろしいですか。",
       "file": "このファイルを削除してもよろしいですか。",
@@ -397,18 +396,13 @@
   },
   "Selection": {
     "category": "カテゴリを選択",
-    "categories": {
-      "file": "ファイルを保存するディレクトリを選択する",
-      "link": "ファイルのカテゴリを選択してください"
-    },
     "date": "日付選択"
   },
   "Roles": {
     "admin": "管理者",
-    "maker": "作成者",
-    "checker": "承認者",
-    "streamer": "Streamer",
-    "owner": "サイネージオーナー",
+    "customer": "Owner",
+    "staff": "Owner",
+    "owner": "Owner",
     "viewer": "監視者"
   },
   "Subscriptions": {

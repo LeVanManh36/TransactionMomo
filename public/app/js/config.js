@@ -52,17 +52,6 @@ angular.module('appConfig', [])
       pdffileRegex:         /\.pdf$/i,
       txtFileRegex:         /\.txt$/i,
       radioFileRegex:       /\.radio$/i,
-      
-      // config for filters
-      labelMode: {
-        player: 'players',
-        asset: 'assets'
-      },
-
-      labelOptions: [
-        {key: "asset", value: "assets", label: "Label.filterTags.assets"},
-        {key: "player", value: "players", label: "Label.filterTags.players"}
-      ],
 
       roles: {
         root: "root",

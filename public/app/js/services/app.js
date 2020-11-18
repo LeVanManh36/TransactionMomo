@@ -155,7 +155,7 @@ angular.module('services.utils', [])
               '$scope', '$modalInstance', 'msg',
               function ($scope, $modalInstance, msgObj) {
                 if (!msgObj.title) {
-                  msgObj.title = 'Popup.confirm.msg';
+                  msgObj.title = 'Confirm.default';
                 }
 
                 $scope.noPrepend = true;
@@ -288,7 +288,8 @@ angular.module('services.utils', [])
       'date',
       'ifconfig',
       'ls ../media',
-      'tail -200 /home/pi/forever_out.log'
+      'tail -200 ./logs/out.log',
+      'tail -200 ./logs/error.log'
     ];
     
     let current = storedArr.length;
