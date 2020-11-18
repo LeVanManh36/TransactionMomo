@@ -20,6 +20,9 @@ const FIELDS = {
     required: true,
     index: true
   },
+  address: {
+    type: String
+  },
   email: {
     type: String,
     required: true,

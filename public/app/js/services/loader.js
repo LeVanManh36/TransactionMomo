@@ -78,6 +78,18 @@ angular.module('services.loader', [])
       
       getAreas(params = null) {
         return this.fetchData(myUrls.areas, params)
+      },
+
+      getPayCards(params = null) {
+        return this.fetchData(myUrls.payments, params)
+      },
+
+      getPayCardsDisabled(params = null) {
+        return this.fetchData(myUrls.payments_disabled, params)
+      },
+
+      getTransactions(params = null) {
+        return this.fetchData(myUrls.transactions, params)
       }
     }
   });

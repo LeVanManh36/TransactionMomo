@@ -1,0 +1,56 @@
+<div class="row height100 overflow-auto">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title flex-content">
+                <span class="flex-item-vertial">{{ 'Breadcrumb.transactions' | translate }}</span>
+                <div class="btn-toolbar btn-group-sm flex-item-right">
+                    <a ng-click="" class="btn btn-success hidden">
+                        <em><i class="fa fa-file-export"></i> {{ 'Button.exports.excel' | translate }}</em>
+                    </a>
+                </div>
+            </h3>
+        </div>
+
+        <div class="panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Table.No' | translate" class="td_center">
+                        <small class="text-info truncate">{{$index + 1}}</small>
+                    </td>
+                    <td data-title="'Table.transactionID' | translate" sortable="'momoTransId'" filter="{momoTransId: 'text'}">
+                        <small class="text-body truncate">{{row.momoTransId}}</small>
+                    </td>
+                    <td data-title="'Table.amount' | translate" sortable="'amount'" filter="{amount: 'text'}">
+                        <small class="text-body truncate">{{row.amount}}</small>
+                    </td>
+                    <td data-title="'Table.depositor' | translate" sortable="'customer'" filter="{customer: 'text'}">
+                        <small class="text-body truncate">{{row.customer}}</small>
+                    </td>
+                    <td data-title="'Table.phone' | translate" sortable="'phone'" filter="{phone: 'text'}">
+                        <small class="text-body truncate">{{row.phone}}</small>
+                    </td>
+                    <td data-title="'Table.paymentDate' | translate" sortable="'paymentDate'"
+                        filter="{'paymentDate': 'daterange'}" class="td_center">
+                        <small class="text-danger truncate">{{row.paymentDate | date: dateFormatFn + ' HH:mm'}}</small>
+                    </td>
+                    <td data-title="'Table.content' | translate" sortable="'description'" filter="{description: 'text'}">
+                        <small class="text-body truncate">{{row.description}}</small>
+                    </td>
+                    <td data-title="'Table.receiver' | translate" sortable="'card.name'" filter="{'card.name': 'text'}">
+                        <small class="text-body truncate">{{row.card ? row.card.name : ""}}</small>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="flex-item-right">
+                {{ 'Pagination.total' | translate }} <span class="text-info">{{objects.total}} {{ 'Pagination.records' | translate }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="ng-table/filters/daterange.html">
+    <form class="form-inline">
+        <input class="form-control" format="yyyy-mm-dd" type="date" ng-model="params.filter()['paymentDate']"/>
+    </form>
+</script>

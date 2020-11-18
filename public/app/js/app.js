@@ -12,6 +12,7 @@ angular.module('appServices', [
     'controllers.profiles',
     'controllers.accounts',
     'controllers.locations',
+    'controllers.transactions',
     'filters.utils',
     'directives.utils',
     'services.authenticate',
@@ -125,6 +126,39 @@ angular.module('appServices', [
           "main": {
             templateUrl: 'app/views/Area/index.html',
             controller: 'AreaCtrl'
+          }
+        },
+        permissions: permissions.admin
+      })
+
+      .state("home.payments", {
+        url: "payments",
+        views: {
+          "main": {
+            templateUrl: 'app/views/Payment/index.html',
+            controller: 'PayCardCtrl'
+          }
+        },
+        permissions: permissions.admin
+      })
+
+      .state("home.payments_disabled", {
+        url: "payments-disabled",
+        views: {
+          "main": {
+            templateUrl: 'app/views/Payment/trash.html',
+            controller: 'PayCardDisabledCtrl'
+          }
+        },
+        permissions: permissions.admin
+      })
+
+      .state("home.transactions", {
+        url: "transactions",
+        views: {
+          "main": {
+            templateUrl: 'app/views/Transaction/index.html',
+            controller: 'TransactionCtrl'
           }
         },
         permissions: permissions.admin

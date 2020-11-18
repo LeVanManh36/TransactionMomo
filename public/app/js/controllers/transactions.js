@@ -1,0 +1,308 @@
+'use strict'
+
+angular.module('controllers.transactions', [])
+  // Controller manage transactions
+  .controller('TransactionCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+
+    $scope.objects = {
+      list_data: [],
+      total: 0,
+      skip: 0,
+      limit: 0
+    };
+
+    $scope.filters = {
+      init: true,
+      currentPage: 0,
+      pageSize: 10,
+      "sorting[]": [],
+      "filters[]": []
+    };
+
+    var reloadData = (params) => {
+      $scope.filters = ngDataTable.setConditions(params);
+
+      return dataLoader.getTransactions($scope.filters)
+        .then(data => {
+          let {filters, ...others} = data;
+          $scope.objects = {...$scope.objects, ...others};
+          params.total($scope.objects.total);
+          return data.list_data;
+        })
+        .catch(err => {
+          console.log('dataLoader.getTransactions error:', err)
+        })
+    }
+
+    var initTable = () => {
+      $scope.tableParams = ngDataTable.init(
+        reloadData,
+        ngDataTable.default.option,
+        ngDataTable.default.counts
+      )
+    }
+
+    initTable();
+
+    $scope.statusMsg = null;
+    $scope.fn = {
+      export() {
+        console.log('Export transactions to excel...')
+      }
+    };
+  })
+  // Controller manage payment cards
+  .controller('PayCardCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+
+    $scope.objects = {
+      list_data: [],
+      total: 0,
+      skip: 0,
+      limit: 0
+    };
+
+    $scope.filters = {
+      init: true,
+      currentPage: 0,
+      pageSize: 10,
+      "sorting[]": [],
+      "filters[]": []
+    };
+
+    var reloadData = (params) => {
+      $scope.filters = ngDataTable.setConditions(params);
+
+      return dataLoader.getPayCards($scope.filters)
+        .then(data => {
+          let {filters, ...others} = data;
+          $scope.objects = {...$scope.objects, ...others};
+          params.total($scope.objects.total);
+          return data.list_data;
+        })
+        .catch(err => {
+          console.log('dataLoader.getPayCards error:', err)
+        })
+    }
+
+    var initTable = () => {
+      $scope.tableParams = ngDataTable.init(
+        reloadData,
+        ngDataTable.default.option,
+        ngDataTable.default.counts
+      )
+    }
+
+    initTable();
+
+    $scope.newObject = {};
+    $scope.statusMsg = null;
+    $scope.selectedObject = null;
+
+    $scope.$on('modal.shown', function () {
+      console.log('Modal is shown!');
+    });
+
+    $scope.fn = {
+      add() {
+        $scope.selectedObject = null;
+        $scope.newObject = {};
+        $scope.modal = $modal
+          .open({
+            templateUrl: '/app/views/Payment/components/form.html',
+            scope: $scope
+          })
+      },
+
+      edit(user) {
+        $scope.selectedObject = user;
+        $scope.newObject = Object.assign({}, user);
+        $scope.modal = $modal
+          .open({
+            templateUrl: '/app/views/Payment/components/form.html',
+            scope: $scope
+          })
+      },
+
+      delete(user) {
+        ngPopup.confirm(
+          {
+            confirmText: "Confirm.delete.account",
+            replacement: {subject: user.email}
+          },
+          () => {
+            dataLoader.deleteData(`${myUrls.payments}/${user._id}`, {}, (err, data) => {
+              if (!err) {
+                $scope.tableParams.reload();
+
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.delete',
+                  msg: data.message
+                })
+              } else {
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.delete',
+                  msg: err.message
+                })
+              }
+            });
+          }
+        )
+      },
+
+      save() {
+        let params = $scope.newObject;
+        dataLoader.postData(myUrls.payments, params, (err, data) => {
+          if (!err) {
+            $scope.tableParams.reload();
+            $scope.fn.abort();
+
+            ngPopup.status({
+              title: 'Breadcrumb.accounts.create',
+              msg: data.message
+            })
+          } else {
+            $scope.statusMsg = err.message;
+          }
+        })
+      },
+
+      update() {
+        let params = $scope.newObject;
+        dataLoader.putData(`${myUrls.payments}/${params._id}`, params, (err, data) => {
+          if (!err) {
+            $scope.tableParams.reload();
+            $scope.fn.abort();
+
+            ngPopup.status({
+              title: 'Breadcrumb.accounts.edit',
+              msg: data.message
+            })
+          } else {
+            $scope.statusMsg = err.message;
+          }
+        })
+      },
+
+      abort() {
+        $scope.newObject = {};
+        $scope.statusMsg = null;
+        $scope.selectedObject = null;
+        $scope.modal.close();
+      },
+
+      changeUnique() {
+        $scope.statusMsg = null;
+      }
+    };
+  })
+  // Controller manage payment cards in trash
+  .controller('PayCardDisabledCtrl', function ($scope, myUrls, $state, $modal, $window, ngPopup, dataLoader, ngDataTable) {
+
+    $scope.roles = [];
+    $scope.roleOptions = {};
+    dataLoader.getRoles()
+      .then(data => {
+        $scope.roles = data.map(({value, label}) => {
+          label = `Roles.${label}`
+          $scope.roleOptions[value] = label;
+          return {value, label}
+        })
+      })
+      .catch(err => {
+        console.log('dataLoader.getRoles error:', err)
+      });
+
+    $scope.objects = {
+      list_data: [],
+      total: 0,
+      skip: 0,
+      limit: 0
+    };
+
+    $scope.filters = {
+      init: true,
+      currentPage: 0,
+      pageSize: 10,
+      "sorting[]": [],
+      "filters[]": []
+    };
+
+    var reloadData = (params) => {
+      $scope.filters = ngDataTable.setConditions(params);
+      return dataLoader.getUsersDisabled($scope.filters)
+        .then(data => {
+          let {filters, ...others} = data;
+          $scope.objects = {...$scope.objects, ...others};
+          params.total($scope.objects.total);
+          return data.list_data;
+        })
+        .catch(err => {
+          console.log('dataLoader.getUsers error:', err)
+        })
+    }
+
+    var initTable = () => {
+      $scope.tableParams = ngDataTable.init(
+        reloadData,
+        ngDataTable.default.option,
+        ngDataTable.default.counts
+      )
+    }
+
+    initTable();
+
+    $scope.fn = {
+
+      delete(user) {
+        ngPopup.confirm(
+          {
+            confirmText: "Confirm.delete.account",
+            replacement: {subject: user.email}
+          },
+          () => {
+            dataLoader.deleteData(`${myUrls.payments_disabled}/${user._id}`, {}, (err, data) => {
+              if (!err) {
+                $scope.tableParams.reload();
+
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.delete',
+                  msg: data.message
+                })
+              } else {
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.delete',
+                  msg: err.message
+                })
+              }
+            });
+          }
+        )
+      },
+
+      restore(user) {
+        ngPopup.confirm(
+          {
+            confirmText: "Confirm.restoreAccount",
+            replacement: {subject: user.email}
+          },
+          () => {
+            dataLoader.putData(`${myUrls.payments_disabled}/${user._id}`, {}, (err, data) => {
+              if (!err) {
+                $scope.tableParams.reload();
+
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.restore',
+                  msg: data.message
+                })
+              } else {
+                ngPopup.status({
+                  title: 'Breadcrumb.accounts.restore',
+                  msg: err.message
+                })
+              }
+            })
+          }
+        )
+      }
+    };
+  });

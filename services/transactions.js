@@ -22,6 +22,7 @@ function loadData(auth) {
         async.each(
           messages,
           (msg, next) => {
+            // console.log('message', msg)
             getInboxContent(client, msg.UID)
               .then(info => {
                 // console.log('getInboxContent end:', info)
@@ -80,15 +81,15 @@ function getMessages(client) {
   return new Promise((resolve, reject) => {
     let data = [];
     client.on("connect", () => {
-      console.log("Successfully connected to server");
+      // console.log("Successfully connected to server");
       client.openMailbox("INBOX", (error, info) => {
         if (error) reject(error);
-        console.log("Message count in INBOX: ", info.count);
+        // console.log("Message count in INBOX: ", info.count);
         if (info.count > 0) {
           client.listMessages(-info.count, (err, messages) => {
             if (err) reject(err);
             messages.map(message => {
-              if (message.from.address === "no-reply@momo.vn") {
+              if (message.from.address === "no-reply@momo.vn" && message.title.includes("Bạn vừa nhận được ti ền từ")) {
                 data.push(message)
               }
             });

@@ -48,6 +48,7 @@
       "file": "Tải lên tệp tin"
     },
     "add": {
+      "new": "Thêm mới",
       "account": "Thêm mới tài khoản",
       "area": "Thêm mới khu vực"
     }
@@ -81,6 +82,9 @@
     "accounts_disabled": "QL Tài Khoản Bị Xóa",
     "customers": "QL Khách Hàng",
     "areas": "QL Khu Vực",
+    "payments": "QL TK Thanh Toán",
+    "payments_disabled": "TK Thanh Toán Bị Xóa",
+    "transactions": "Giao Dịch Thanh Toán",
     "settings": "Thiết Lập"
   },
   "Toolbar": {
@@ -183,6 +187,14 @@
       "edit": "Sửa thông tin khách hàng",
       "delete": "Xóa khách hàng"
     },
+    "payments": {
+      "list": "Danh sách tài khoản thanh toán",
+      "create": "Thêm mới tài khoản thanh toán",
+      "edit": "Sửa thông tin tài khoản",
+      "delete": "Xóa tài khoản thanh toán",
+      "restore": "Khôi phục tài khoản thanh toán"
+    },
+    "transactions": "Danh sách giao dịch thanh toán",
     "settings": "Thiết lập cài đặt",
     "login": "Sign In"
   },
@@ -275,7 +287,7 @@
     "action": "Hành Động",
     "address": "Địa Chỉ",
     "ipAddress": "Địa Chỉ IP",
-    "amount": "Thành Tiền",
+    "amount": "Số Tiền",
     "area": "Khu Vực",
     "code": "Mã",
     "customer": "Khách Hàng",
@@ -307,6 +319,12 @@
     "size": "Kích Thước",
     "type": "Phân Loại",
     "thumbnail": "Hình Nhỏ",
+    "content": "Nội Dung",
+    "message": "Tin Nhắn",
+    "paymentDate": "Ngày Thanh Toán",
+    "transactionID": "Mã Giao Dịch",
+    "depositor": "Người gửi",
+    "receiver": "Người nhận",
     "areas": {
       "name": "Tên Khu Vực"
     },

@@ -29,7 +29,10 @@ angular.module('appConfig', [])
       lockAcc:              base + 'api/lock-account',
       unlockAcc:            base + 'api/unlock-account',
       settings:             base + 'api/settings',
-      areas:                base + 'api/areas'
+      areas:                base + 'api/areas',
+      payments:             base + 'api/cards',
+      payments_disabled:    base + 'api/cards-disabled',
+      transactions:         base + 'api/transactions'
     }
   })())
   

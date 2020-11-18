@@ -1,0 +1,133 @@
+<div class="modal-header">
+    <h3 class="{{!selectedObject ? 'text-info' : 'text-warning'}}">
+        {{ !selectedObject ? ('Breadcrumb.payments.create' | translate) : ('Breadcrumb.payments.edit' | translate) }}
+        <a ng-click="modal.close()" class="pull-right close"><i class="fa fa-times-circle"></i></a>
+    </h3>
+</div>
+
+<div ng-if="!selectedObject">
+    <form role="form" name="formPayment" ng-submit="fn.save()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.user.name' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.name" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.user.name' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" class="form-control"
+                           placeholder="{{ 'Placeholder.address' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.phone' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.phone" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.phone' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.email' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.email" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.email' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.password' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="password" ng-model="newObject.pwd" min="6" required="required"
+                           class="form-control" placeholder=""/>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>
+
+<div ng-if="selectedObject">
+    <form role="form" name="formPayment" ng-submit="fn.update()">
+        <div class="modal-body">
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.user.name' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.name" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.user.name' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.address' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.address" class="form-control"
+                           placeholder="{{ 'Placeholder.address' | translate }}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.phone' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.phone" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.phone' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.email' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="newObject.email" required="required" class="form-control"
+                           placeholder="{{ 'Placeholder.email' | translate }}" ng-change="fn.changeUnique()"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-4">{{ 'Label.password' | translate }}</label>
+                <div class="col-sm-8">
+                    <input type="password" ng-model="newObject.pwd" min="6" class="form-control" placeholder=""/>
+                </div>
+            </div>
+
+            <div class="form-group row" ng-if="statusMsg">
+                <label class="control-label col-sm-offset-1 col-sm-10 text-danger">
+                    {{ 'Label.error' | translate }}
+                </label>
+                <div class="col-lg-offset-1 col-sm-11">
+                    <h5 class="text-danger">{{statusMsg}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button ng-click="fn.abort()" class="btn btn-warning">
+                <i class="fa fa-reply"></i> {{ 'Button.cancel' | translate }}
+            </button>
+            <button type="submit" ng-disabled="msg.disable" class="btn btn-primary">
+                <i class="fa fa-save"></i> {{ 'Button.save' | translate }}
+            </button>
+        </div>
+    </form>
+</div>

@@ -9,6 +9,7 @@ const Model = require('../Models/Card');
 class Controller extends BaseController {
   constructor() {
     super(Controller)
+    this.softDelete = true;
     this.model = Model;
     this.requireParams = {
       ...this.requireParams,
@@ -16,8 +17,8 @@ class Controller extends BaseController {
       update: ['name', 'phone', 'email', 'pwd']
     }
     this.acceptFields = {
-      store: [],
-      update: []
+      store: ["address"],
+      update: ["address"]
     }
     this.validate = {
       unique: [
