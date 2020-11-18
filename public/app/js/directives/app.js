@@ -141,7 +141,11 @@ angular.module('directives.utils', [])
             }
 
             if (tooBig.length > 0) {
-              raiseError(tooBig, 'MAX_SIZE_EXCEEDED', "Files are larger than the specified max (" + scope.maxFileSizeMb + "MB)");
+              raiseError(
+                tooBig,
+                'MAX_SIZE_EXCEEDED',
+                "Files are larger than the specified max (" + scope.maxFileSizeMb + "MB)"
+              );
               return;
             }
             scope.autoUpload = 'true'; //forcing as of now

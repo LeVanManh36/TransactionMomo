@@ -288,7 +288,8 @@ angular.module('services.utils', [])
       'date',
       'ifconfig',
       'ls ../media',
-      'tail -200 /home/pi/forever_out.log'
+      'tail -200 ./logs/out.log',
+      'tail -200 ./logs/error.log'
     ];
     
     let current = storedArr.length;
