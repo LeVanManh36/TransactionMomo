@@ -7,7 +7,9 @@ const modelsPath = `${rootPath}/app/Models`;
 module.exports = {
   load() {
     require('../app/Models/User');
-    // require('../app/Models/Area');
+    require('../app/Models/Area');
+    require('../app/Models/Card');
+    require('../app/Models/Transaction');
   },
 
   init() {
