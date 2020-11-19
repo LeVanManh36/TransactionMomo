@@ -19,9 +19,9 @@ angular.module('controllers.authenticate', [])
       AuthenticationService.Login(vm.email, vm.password, (err, user) => {
         if (!err) {
           $rootScope.authUser = user;
-          let redirectPath = '/devices';
+          let redirectPath = '/transactions';
           if (user.role === 'root') redirectPath = "/accounts";
-          if (user.role === 'admin') redirectPath = "/users";
+          if (user.role === 'admin') redirectPath = "/payments";
           $location.path(redirectPath);
         } else {
           vm.error = err || "Message.error.login";

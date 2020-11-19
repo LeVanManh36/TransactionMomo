@@ -9,9 +9,9 @@ angular.module('controllers.index', [])
     if (currentUser) {
       $rootScope.isRoleAdmin = currentUser.role === appConstants.roles.admin;
       if ($location.$$path === '/start') {
-        redirectPath = '/devices';
+        redirectPath = '/transactions';
         if (currentUser.role === 'root') redirectPath = "/accounts";
-        if (currentUser.role === 'admin') redirectPath = "/users";
+        if (currentUser.role === 'admin') redirectPath = "/payments";
         $location.path(redirectPath);
       }
     } else {
