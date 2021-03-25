@@ -110,13 +110,13 @@
                     </a>
                 </li>
 
-                <li ng-if="['admin'].indexOf(authUser.role) > -1">
+                <!--<li ng-if="['admin'].indexOf(authUser.role) > -1">
                     <a ui-sref="home.areas" ui-sref-opts="{reload: true}">
                         <i class="fa fa-map-marker"></i>{{ 'Sidebar.areas' | translate }}
                     </a>
                 </li>
 
-                <!--<li ng-if="isRoleAdmin">
+                <li ng-if="isRoleAdmin">
                     <a ui-sref="home.settings" ui-sref-opts="{reload: true}">
                         <i class="fas fa-cog"></i>{{ 'Sidebar.settings' | translate }}
                     </a>

@@ -31,7 +31,7 @@ const FIELDS = {
   },
   description: {
     type: String,
-    required: true,
+    required: false,
     index: true
   },
   momoTransId: {

@@ -183,6 +183,23 @@ angular.module('controllers.transactions', [])
         })
       },
 
+      sync() {
+        let params = $scope.newObject;
+        dataLoader.putData(`${myUrls.payments}/${params._id}`, params, (err, data) => {
+          if (!err) {
+            $scope.tableParams.reload();
+            $scope.fn.abort();
+
+            ngPopup.status({
+              title: 'Breadcrumb.accounts.edit',
+              msg: data.message
+            })
+          } else {
+            $scope.statusMsg = err.message;
+          }
+        })
+      },
+
       abort() {
         $scope.newObject = {};
         $scope.statusMsg = null;

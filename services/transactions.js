@@ -16,7 +16,7 @@ function loadData(auth) {
   return new Promise((resolve, reject) => {
     getMessages(client)
       .then(messages => {
-        // console.log('getMessages:', messages)
+        console.log('getMessages:', messages);
         let data = [];
         let errors = [];
         async.each(
@@ -89,7 +89,7 @@ function getMessages(client) {
           client.listMessages(-info.count, (err, messages) => {
             if (err) reject(err);
             messages.map(message => {
-              if (message.from.address === "no-reply@momo.vn" && message.title.includes("Bạn vừa nhận được ti ền từ")) {
+              if (message.from.address === "no-reply@momo.vn" && message.title.includes("Bạn vừa nhận được t")) {
                 data.push(message)
               }
             });

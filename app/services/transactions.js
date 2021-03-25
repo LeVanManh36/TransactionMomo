@@ -32,6 +32,7 @@ class Transaction extends BaseService {
     }
 
     if (!data.length) return {count: 0};
+    console.log(data);
     [err, result] = await to(Promise.all(data.map(obj => this.model.insertOne(obj))));
     if (err) throw Error(err.message);
     return result

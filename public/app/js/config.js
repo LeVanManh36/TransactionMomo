@@ -13,7 +13,7 @@ angular.module('appConfig', [])
     
     protocol = window.location.protocol.toLowerCase();
     if (protocol.indexOf("http") !== -1) base = `${window.location.origin}/`;
-    // base = "http://192.168.6.136:3000/"
+    // base = "http://127.0.0.1:3000/"
     
     return {
       base:                 base,
